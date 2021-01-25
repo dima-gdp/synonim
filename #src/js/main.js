@@ -1,9 +1,22 @@
 $(document).ready(function () {
 	objectFitImages();
 
+	const slider_pag = new Swiper('.pag-hero__slider', {
+		slidesPerView: 'auto',
+		spaceBetween: 45,
+		loop: false,
+		loopedSlides: 1,
+		slideToClickedSlide: true,
+	});
+
+
 	const slider_hero = new Swiper('.hero__slider', {
 		slidesPerView: 1,
+		loopedSlides: 1,
 		loop: false,
+		thumbs: {
+			swiper: slider_pag,
+		}
 		// breakpoints: {
 		// 	370: {
 		// 		slidesPerView: 1,
@@ -28,13 +41,9 @@ $(document).ready(function () {
 		// }
 	});
 
-	const slider_pag = new Swiper('.pag-hero__slider', {
-		slidesPerView: 5,
-		loop: false,
-	});
 
-	slider_hero.controller.control = [slider_pag];
-	slider_pag.controller.control = [slider_hero];
+	// slider_hero.controller.control = [slider_pag];
+	// slider_pag.controller.control = [slider_hero];
 
 	const slider2 = new Swiper('.fourth__slider', {
 		slidesPerView: 3,

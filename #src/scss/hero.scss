@@ -50,6 +50,7 @@
 	&__right {
 		max-width: 954px;
 		margin-right: calc((100vw - 100%) / -2);
+		position: relative;
 	}
 	// .hero__slider
 	&__slider {
@@ -68,15 +69,28 @@
 }
 
 .pag-hero {
+	position: absolute;
+	bottom: 103px;
+	left: 41%;
+	width: 100%;
+	padding: 36px 20px 20px 50px;
+	height: 565px;
+	transform: translateY(100%);
+	background: url("../img/hero-bg.jpg") 0 0 / cover no-repeat;
+	z-index: 1;
 	// .pag-hero__slider
 	&__slider {
+		overflow: hidden;
 		.swiper-slide {
 			font-size: 18px;
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			color: #a4a4a4;
+			cursor: pointer;
+			user-select: none;
+			width: 25px;
 		}
-		.swiper-slide-active {
+		.swiper-slide-thumb-active {
 			color: #fcb813;
 		}
 	}
