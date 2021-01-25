@@ -1,0 +1,126 @@
+.fourth {
+	// .fourth__container
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+	// .fourth__title
+	&__title {
+		max-width: 1078px;
+		margin-bottom: 35px;
+		color: #ffffff;
+	}
+	// .fourth__subtitle
+	&__subtitle {
+		max-width: 1078px;
+		margin-bottom: 114px;
+		color: #fcb813;
+	}
+	// .fourth__slider
+	&__slider {
+	}
+	// .fourth__bot
+	&__bot {
+	}
+	// .fourth__about
+	&__about {
+	}
+	// .fourth__control
+	&__control {
+	}
+}
+.fourth-item {
+	padding: 479px 0px 40px 43px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	// .fourth-item__descr
+	&__descr {
+	}
+	// .fourth-item__hover
+	&__hover {
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		font-size: 24px;
+		text-transform: uppercase;
+
+		color: #ffffff;
+	}
+	// .fourth-item__arrow
+	&__arrow {
+		margin-left: 25px;
+		width: 67px;
+		height: 67px;
+		flex: 0 0 67px;
+		border-radius: 100%;
+		background: #fcb813;
+		position: relative;
+		overflow: hidden;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 25px;
+			height: 12px;
+			transform: translate(-50%, -50%);
+			background: url("../img/arrowsvg.svg") 0 0 / contain no-repeat;
+		}
+	}
+}
+.descr-fourth {
+	padding: 8px 10px 8px 49px;
+	background-color: #fff;
+	// .descr-fourth__title
+	&__title {
+		margin-bottom: 23px;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 1.33;
+		color: #000000;
+	}
+	// .descr-fourth__flex
+	&__flex {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0 -10px;
+	}
+	// .descr-fourth__column
+	&__column {
+		padding: 0 10px;
+		display: grid;
+		grid-template-columns: 26px auto;
+		grid-row-gap: 5px;
+		grid-column-gap: 14px;
+		&:nth-child(2) {
+			margin: 0 auto;
+		}
+	}
+	// .descr-fourth__img
+	&__img {
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		grid-row-start: span 2;
+	}
+	// .descr-fourth__key
+	&__key {
+		font-size: 10px;
+		color: #5f5f5f;
+	}
+	// .descr-fourth__value
+	&__value {
+		font-size: 16px;
+		color: #5f5f5f;
+	}
+}
+.about-fourth {
+	// .about-fourth__text
+	&__text {
+	}
+	// .about-fourth__btn
+	&__btn {
+	}
+}

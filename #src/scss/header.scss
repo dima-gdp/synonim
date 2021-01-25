@@ -1,0 +1,51 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 296px;
+	z-index: 2;
+	// .header__container
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 44px;
+		padding-bottom: 44px;
+	}
+	// .header__logo
+	&__logo {
+		margin-right: 30px;
+	}
+	// .header__tel-block
+	&__tel-block {
+		display: flex;
+		align-items: center;
+	}
+	// .header__tel
+	&__tel {
+		margin-right: 43px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 1.5;
+		color: #ffffff;
+	}
+	// .header__text
+	&__text {
+		font-family: "Montserrat";
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 1.5;
+		color: #fcb813;
+	}
+	// .header__burger
+	&__burger {
+	}
+}
+.container {
+}
+.logo {
+}
+.burger {
+	display: none;
+}

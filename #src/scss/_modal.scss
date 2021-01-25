@@ -1,0 +1,152 @@
+.modal {
+	display: none;
+	max-width: 570px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	background-color: transparent;
+	// .modal__container
+	&__container {
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		background: #ebebeb;
+		border-radius: 26px;
+	}
+	// .modal__close
+	&__close {
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 15px;
+		right: 12px;
+		background-color: transparent;
+		cursor: pointer;
+
+		@media (min-width: 992px) {
+			&:hover.modal__close::after,
+			&:hover.modal__close::before {
+				background-color: #e31e24;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: calc(50% - 1px);
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			transition: background-color 0.3s;
+		}
+		&::before {
+			transform: rotate(-45deg);
+		}
+		&::after {
+			transform: rotate(45deg);
+		}
+	}
+	// .modal__image
+	&__image {
+		width: 100%;
+		max-width: 170px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50% 50%;
+		height: auto;
+	}
+	// .modal__content
+	&__content {
+		padding: 30px 35px 30px 25px;
+	}
+	// .modal__title
+	&__title {
+		margin-bottom: 10px;
+		padding-bottom: 18px;
+		padding-left: 27px;
+		font-size: 24px;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -9px;
+			width: 7px;
+			height: 45px;
+			background-color: #e31e24;
+		}
+	}
+	// .modal__subtitle
+	&__subtitle {
+		margin-bottom: 20px;
+		font-size: 16px;
+		color: #000;
+	}
+	// .modal__form
+	&__form {
+		margin-bottom: 28px;
+	}
+	// .modal__input
+	&__input {
+		min-height: 51px;
+		width: 100%;
+		background-color: transparent;
+		border: 1px solid #545a65;
+		font-size: 16px;
+		padding: 5px 20px;
+		color: #000;
+		&:not(:last-child) {
+			margin-bottom: 18px;
+		}
+	}
+	// .modal__btn
+	&__btn {
+		width: 100%;
+		min-height: 52px !important;
+		background: #e31e24;
+		border-radius: 50px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #fefefe;
+	}
+	// .modal__privacy
+	&__privacy {
+		font-size: 12px;
+		width: 100%;
+		text-align: left;
+		padding-left: 34px;
+		background-image: url("../img/polit.png");
+		background-size: 22px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		min-height: 23px;
+		color: #000;
+		a {
+			text-decoration-line: underline;
+			color: #e31e24;
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.modal-container-polit {
+		padding: 40px 20px 20px 20px;
+	}
+	.title-modal-polit {
+		font-size: 23px;
+		line-height: 24px;
+	}
+	.modal-close-polit {
+		top: 9px;
+		right: 10px;
+	}
+}
+
+@media (max-width: 576px) {
+	.modal__image {
+		display: none;
+	}
+}
