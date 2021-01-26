@@ -1,4 +1,14 @@
 .fourth {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 30%;
+		height: 1600px;
+		background: url("../img/hero-bg.jpg") center / cover no-repeat;
+	}
 	// .fourth__container
 	&__container {
 		position: relative;
@@ -18,15 +28,28 @@
 	}
 	// .fourth__slider
 	&__slider {
+		margin-bottom: 60px;
+		margin-right: -500px;
+		overflow: hidden;
 	}
 	// .fourth__bot
 	&__bot {
+		display: flex;
+		align-items: center;
 	}
 	// .fourth__about
 	&__about {
 	}
 	// .fourth__control
 	&__control {
+	}
+	&__prev {
+		margin-right: 35px;
+	}
+	&__next {
+		path {
+			fill: #fcb813;
+		}
 	}
 }
 .fourth-item {
@@ -117,10 +140,22 @@
 	}
 }
 .about-fourth {
+	display: flex;
+	align-items: center;
+	margin-right: 174px;
+	max-width: 1032px;
+	flex-grow: 1;
 	// .about-fourth__text
 	&__text {
+		margin-right: 54px;
+		font-size: 20px;
+		line-height: lh(23, 20);
+		color: #000000;
 	}
 	// .about-fourth__btn
 	&__btn {
+		flex: 0 0 307px;
+		background: #fcb813;
+		color: #fff;
 	}
 }

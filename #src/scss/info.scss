@@ -1,0 +1,33 @@
+.info {
+	// .info__container
+	&__container {
+	}
+	// .info__grid
+	&__grid {
+		display: grid;
+		max-width: 1131px;
+		grid-template-columns: 380px 380px;
+		grid-column-gap: 370px;
+		grid-row-gap: 90px;
+	}
+	// .info__column
+	&__column {
+		padding-left: 45px;
+	}
+	// .info__item
+	&__item {
+		padding: 171px 20px 30px 79px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	// .info__title
+	&__title {
+	}
+	// .info__subtitle
+	&__subtitle {
+	}
+	// .info__image
+	&__image {
+	}
+}
