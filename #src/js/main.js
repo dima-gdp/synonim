@@ -80,6 +80,11 @@ $(document).ready(function () {
 			observeParents: true,
 			observeSlideChildren: true,
 			loop: false,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction',
+				clickable: true,
+			},
 			// navigation: {
 			// 	nextEl: el.closest('.slider-1').querySelector('.slider-1__next'),
 			// 	prevEl: el.closest('.slider-1').querySelector('.slider-1__prev'),
