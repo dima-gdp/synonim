@@ -84,6 +84,33 @@ $(document).ready(function () {
 		},
 	});
 
+	const sliderModalBot = new Swiper('.bot-modal__slider', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: false,
+		direction: 'vertical',
+		on: {
+			slideChange: function () {
+				$('.nav-modal__item').removeClass('nav-modal__item--active');
+				$('.nav-modal__item').eq(sliderModalBot.realIndex).addClass('nav-modal__item--active')
+			}
+		}
+	});
+
+	$('.nav-modal__item').each(function (i, el) {
+		$(el).on('click', function (ev) {
+			sliderModalBot.slideTo(i);
+			$('.nav-modal__item').removeClass('nav-modal__item--active')
+			$(this).addClass('nav-modal__item--active')
+		})
+	})
+
+	$('.nav-modal__item').on('click', function (ev) {
+
+		$(this).closest('.doing__item').addClass('doing__item--active')
+
+	})
+
 	$('.item-third__top').on('click', function (ev) {
 		let text = $(this).next('.item-third__bot');
 		let imgFrom = $(this).attr('data-img');
