@@ -6,7 +6,7 @@
 		top: 0;
 		left: 0;
 		width: 70%;
-		height: 120%;
+		height: 1594px;
 		background: url("../img/hero-bg.jpg") center / cover no-repeat;
 		z-index: 0;
 	}
@@ -26,6 +26,7 @@
 	// .third__flex
 	&__flex {
 		display: flex;
+		align-items: flex-start;
 	}
 	// .third__left
 	&__left {
@@ -43,6 +44,7 @@
 	// .third__right
 	&__right {
 		flex: 0 0 530px;
+		min-height: 530px;
 		position: relative;
 		&::before {
 			content: "";
@@ -87,6 +89,7 @@
 		justify-content: space-between;
 		padding-top: 21px;
 		padding-bottom: 21px;
+		padding-right: 15px;
 		cursor: pointer;
 		&--active {
 			.item-third__btn::before {

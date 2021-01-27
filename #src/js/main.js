@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	objectFitImages();
 
+	const imgTo = $('.third__image img')
+
 	const slidersTabs = document.querySelectorAll('.portfolio__slider');
 
 
@@ -58,17 +60,57 @@ $(document).ready(function () {
 		},
 	});
 
+	const sliderDoing = new Swiper('.doing__slider', {
+		slidesPerView: 3,
+		loop: true,
+		spaceBetween: 40,
+		navigation: {
+			nextEl: '.doing__next',
+			prevEl: '.doing__prev',
+		},
+	});
+
+	const sliderModalTop = new Swiper('.top-modal__slider', {
+		slidesPerView: 1,
+		loop: false,
+		navigation: {
+			nextEl: '.top-modal__next',
+			prevEl: '.top-modal__prev',
+		},
+		pagination: {
+			el: '.top-modal__pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
+
 	$('.item-third__top').on('click', function (ev) {
 		let text = $(this).next('.item-third__bot');
+		let imgFrom = $(this).attr('data-img');
+		imgTo.attr('src', imgFrom);
 		$(this).toggleClass('item-third__top--active')
-		text.slideToggle();
+		text.stop().slideToggle();
+	})
+
+	$('.item-answer__top').on('click', function (ev) {
+		let text = $(this).next('.item-answer__bot');
+		$(this).toggleClass('item-answer__top--active')
+		text.stop().slideToggle();
 	})
 
 	$('.price-item__top').on('click', function (ev) {
 		let text = $(this).next('.price-item__bot');
 		$(this).toggleClass('price-item__top--active')
-		text.slideToggle();
+		text.stop().slideToggle();
 	})
+
+
+	$('.front-doing__btn').on('click', function (ev) {
+
+		$(this).closest('.doing__item').addClass('doing__item--active')
+
+	})
+
 
 	slidersTabs.forEach(function (el) {
 
@@ -80,11 +122,11 @@ $(document).ready(function () {
 			observeParents: true,
 			observeSlideChildren: true,
 			loop: false,
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'fraction',
-				clickable: true,
-			},
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// 	type: 'fraction',
+			// 	clickable: true,
+			// },
 			// navigation: {
 			// 	nextEl: el.closest('.slider-1').querySelector('.slider-1__next'),
 			// 	prevEl: el.closest('.slider-1').querySelector('.slider-1__prev'),
@@ -107,24 +149,26 @@ $(document).ready(function () {
 		});
 	})
 
-	// Fancy-box
-	// $(".to-modal").on('click', function () {
-	// 	$.fancybox.open({
-	// 		src: '#modal',
-	// 		touch: 'false',
-	// 		smallBtn: false,
-	// 		buttons: '',
-	// 	});
-	// });
 
-	// $(".to-privacy").on('click', function () {
-	// 	$.fancybox.open({
-	// 		src: '#modal-polit',
-	// 		touch: 'false',
-	// 		smallBtn: false,
-	// 		buttons: '',
-	// 	});
-	// });
+
+	// Fancy-box
+	$(".to-modal").on('click', function () {
+		$.fancybox.open({
+			src: '#modal-call',
+			touch: 'false',
+			smallBtn: false,
+			buttons: '',
+		});
+	});
+
+	$(".to-privacy").on('click', function () {
+		$.fancybox.open({
+			src: '#modal-polit',
+			touch: 'false',
+			smallBtn: false,
+			buttons: '',
+		});
+	});
 
 	// Input-mask
 	// $('input[type="tel"]').inputmask({ "mask": "+7 (999)-999-99-99" });
@@ -144,12 +188,38 @@ $(document).ready(function () {
 	// 	mobMenu.removeClass('active')
 	// })
 
-	// $(document).click(function (ev) {
-	// 	if (!ev.target.closest('.header__burger') && !ev.target.closest('h1')) {
-	// 		mobMenu.removeClass('active')
-	// 	}
-	// })
+	$(document).click(function (ev) {
+		// if (!ev.target.closest('.header__burger') && !ev.target.closest('h1')) {
+		// 	mobMenu.removeClass('active')
+		// }
+		if (!ev.target.closest('.front-doing__btn')) {
+			$('.doing__item').removeClass('doing__item--active')
+		}
+	})
 
+
+	if (document.getElementById('map')) {
+
+		ymaps.ready(function () {
+			var myMap = new ymaps.Map('map', {
+				center: [52.05693880953456, 118.68705543322154],
+				zoom: 4
+			});
+
+			var myPlacemark = new ymaps.Placemark([55.54055193739615, 108.71146949572154], {
+				hintContent: 'г. Борисоглебск, ул. Победы, д. 66',
+				balloonContent: 'г. Борисоглебск, ул. Победы, д. 66'
+			},
+				{
+					preset: 'islands#redIcon',
+					iconLayout: 'default#image',
+					iconImageSize: [20, 28],
+					iconImageOffset: [-19, -52]
+				});
+
+			myMap.geoObjects.add(myPlacemark);
+		});
+	}
 
 
 });

@@ -14,10 +14,13 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	position: relative;
 }
 
 .main {
 	flex: 1 1 auto;
+	position: relative;
+	z-index: 1;
 }
 
 .visually-hidden {
@@ -93,48 +96,31 @@ body {
 	}
 }
 
-.flip {
+.to-privacy {
+	cursor: pointer;
+	transition: 0.3s;
 	&:hover {
-		.flip__body {
-			transform: rotateY(-180deg);
-		}
+		color: #fcb813;
 	}
-	// .flip__body
-	&__body {
-		position: relative;
-		width: 150px;
-		height: 150px;
-		transition: 0.8s;
-		transform-style: preserve-3d;
+}
+
+.decor {
+	position: absolute;
+	top: 0;
+	height: 20000px;
+	width: 1px;
+	border: 1px solid #e5e5e5;
+	&--1 {
+		left: calc(50% + 145px);
 	}
-	background-color: #fff;
-	// .flip__front
-	&__front {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 2;
-		transform: rotateY(0deg);
-		background-color: aqua;
-		// backface-visibility: hidden;
+	&--2 {
+		left: calc(50% - 230px);
 	}
-	// .flip__back
-	&__back {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: rotateY(-180deg);
-		background-color: rebeccapurple;
+	&--3 {
+		left: calc(50% - 606px);
+	}
+	&--4 {
+		left: calc(50% + 520px);
 	}
 }
 

@@ -1,6 +1,17 @@
 .consultation {
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 42.4%;
+		height: 1052px;
+		background: #e5e5e5;
+	}
 	// .consultation__container
 	&__container {
+		position: relative;
 	}
 	// .consultation__flex
 	&__flex {
@@ -9,6 +20,7 @@
 	// .consultation__left
 	&__left {
 		flex: 0 0 533px;
+		margin-right: 20px;
 	}
 	// .consultation__title
 	&__title {
@@ -31,6 +43,7 @@
 	}
 	// .consultation__right
 	&__right {
+		min-height: 694px;
 	}
 	// .consultation__img
 	&__img {
@@ -170,6 +183,7 @@
 		color: #000000;
 		background: #fcb813;
 		flex: 0 0 272px;
+		text-transform: uppercase;
 	}
 	// .bot-consultation__bot
 	&__bot {
@@ -177,7 +191,7 @@
 		line-height: 1.71;
 		color: #5f5f5f;
 	}
-	.to-polit {
+	.to-privacy {
 		color: #fff;
 		cursor: pointer;
 	}

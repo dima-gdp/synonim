@@ -1,5 +1,6 @@
 @@include('header.html')
 
+
 <div class="main">
 	<section class="hero">
 		<div class="hero__container container">
@@ -62,7 +63,8 @@
 						<div class="item-second__image">
 							<img src="img/second-1.jpg" alt="">
 						</div>
-						<h3 class="item-second__title">Жилая недвижимость</h3>
+						<h3 class="item-second__title">Жилая недвижимость
+						</h3>
 					</div>
 				</div>
 				<div class="second__column">
@@ -83,7 +85,7 @@
 				<div class="third__left">
 					<div class="third__list">
 						<div class="third__item item-third">
-							<div class="item-third__top">
+							<div class="item-third__top" data-img="img/third-1.jpg">
 								<h3 class="item-third__title">Эскизный проект</h3>
 								<button class="item-third__btn"></button>
 							</div>
@@ -98,7 +100,7 @@
 							</div>
 						</div>
 						<div class="third__item item-third">
-							<div class="item-third__top">
+							<div class="item-third__top" data-img="img/fourth-1.jpg">
 								<h3 class="item-third__title">Эскизный проект</h3>
 								<button class="item-third__btn"></button>
 							</div>
@@ -113,7 +115,7 @@
 							</div>
 						</div>
 						<div class="third__item item-third">
-							<div class="item-third__top">
+							<div class="item-third__top" data-img="img/third-1.jpg">
 								<h3 class="item-third__title">Эскизный проект</h3>
 								<button class="item-third__btn"></button>
 							</div>
@@ -242,7 +244,7 @@
 			<div class="fourth__bot">
 				<div class="fourth__about about-fourth">
 					<p class="about-fourth__text">Мы разработаем для Вас уникальный проект с учетом всех пожеланий</p>
-					<a href="#" class="about-fourth__btn btn">Закажите уникальный проект</a>
+					<a class="about-fourth__btn btn to-modal">Закажите уникальный проект</a>
 				</div>
 				<div class="fourth__control control-fourth">
 					<button class="control-fourth__prev fourth__prev">@@include('img/arrow-slider.svg')</button>
@@ -312,6 +314,7 @@
 												насущным потребностям.</div>
 										</div>
 									</div>
+									<div class="swiper-pagination"></div>
 								</div>
 							</div>
 
@@ -322,22 +325,90 @@
 		</div>
 	</section>
 	<section class="doing">
+		<div class="doing__bg" style="background-image: url(img/doing-bg.jpg);"></div>
 		<div class="doing__container container">
 			<h2 class="doing__title title">Что делает нас достойной компанией?</h2>
 			<p class="doing__subtitle subtitle">Управляем строительными рисками и берем ответственность на себя.</p>
-			<div class="flip">
-				<div class="flip__body">
-					<div class="flip__front">aaaaaaaaaaa</div>
-					<div class="flip__back">bbbbbbbbbbbbb</div>
-				</div>
-			</div>
 			<div class="doing__slider">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"></div>
+					<div class="swiper-slide">
+						<div class="doing__item">
+							<div class="doing__front front-doing">
+								<div class="front-doing__img">
+									<img src="img/doing-1.svg" alt="">
+								</div>
+								<div class="front-doing__title">Наблюдение онлайн</div>
+								<button type="button" class="front-doing__btn">Узнать больше<span></span></button>
+							</div>
+							<div class="doing__back back-doing">
+								<div class="back-doing__title">Обеспечим полный сервис
+								</div>
+								<ul class="back-doing__list">
+									<li class="back-doing__item">Выезд специалиста на объект</li>
+									<li class="back-doing__item">Замер и консультирование</li>
+									<li class="back-doing__item">Создание дизайн поекта внутренней и внешней отделки</li>
+									<li class="back-doing__item">Монтаж материалов</li>
+									<li class="back-doing__item">Строительство «под ключ»</li>
+									<li class="back-doing__item">Бесплатное хранение</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="doing__item">
+							<div class="doing__front front-doing">
+								<div class="front-doing__img">
+									<img src="img/doing-1.svg" alt="">
+								</div>
+								<div class="front-doing__title">Наблюдение онлайн</div>
+								<button type="button" class="front-doing__btn">Узнать больше<span></span></button>
+							</div>
+							<div class="doing__back back-doing">
+								<div class="back-doing__title">Обеспечим полный сервис
+								</div>
+								<ul class="back-doing__list">
+									<li class="back-doing__item">Выезд специалиста на объект</li>
+									<li class="back-doing__item">Замер и консультирование</li>
+									<li class="back-doing__item">Создание дизайн поекта внутренней и внешней отделки</li>
+									<li class="back-doing__item">Монтаж материалов</li>
+									<li class="back-doing__item">Строительство «под ключ»</li>
+									<li class="back-doing__item">Бесплатное хранение</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="doing__item">
+							<div class="doing__front front-doing">
+								<div class="front-doing__img">
+									<img src="img/doing-1.svg" alt="">
+								</div>
+								<div class="front-doing__title">Наблюдение онлайн</div>
+								<button type="button" class="front-doing__btn">Узнать больше<span></span></button>
+							</div>
+							<div class="doing__back back-doing">
+								<div class="back-doing__title">Обеспечим полный сервис
+								</div>
+								<ul class="back-doing__list">
+									<li class="back-doing__item">Выезд специалиста на объект</li>
+									<li class="back-doing__item">Замер и консультирование</li>
+									<li class="back-doing__item">Создание дизайн поекта внутренней и внешней отделки</li>
+									<li class="back-doing__item">Монтаж материалов</li>
+									<li class="back-doing__item">Строительство «под ключ»</li>
+									<li class="back-doing__item">Бесплатное хранение</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="doing__control control-fourth">
-					<button class="control-fourth__prev doing__prev">@@include('img/arrow-slider.svg')</button>
-					<button class="control-fourth__next doing__next">@@include('img/arrow-slider.svg')</button>
+				<div class="doing__control-wrapper">
+					<div class="doing__control control-fourth">
+						<button class="control-fourth__prev doing__prev">@@include('img/arrow-slider.svg')</button>
+						<button class="control-fourth__next doing__next">@@include('img/arrow-slider.svg')</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -398,7 +469,7 @@
 										<div class="right-price__image">
 											<img src="img/card-right.svg" alt="">
 										</div>
-										<div class="right-price__text">Короткий срок</div>
+										<div class="right-price__text">Короткий срок ewfwef qefefwef wefwefe</div>
 									</div>
 									<div class="right-price__item">
 										<div class="right-price__image">
@@ -544,7 +615,7 @@
 						<button class="bot-consultation__submit btn">Отправить</button>
 					</div>
 					<div class="bot-consultation__bot">
-						Нажимая на кнопку «Отправить» вы соглашаетесь с <a class="to-polit">правилами обработки персональных
+						Нажимая на кнопку «Отправить» вы соглашаетесь с <a class="to-privacy">правилами обработки персональных
 							данных</a>
 					</div>
 				</div>
@@ -564,10 +635,75 @@
 						<img src="img/info-1.svg" alt="">
 					</div>
 				</div>
+				<div class="info__column">
+					<div class="info__item" style="background-image: url('img/info-bg-1.jpg');">
+						<div class="info__title">Материнский капитал</div>
+						<div class="info__subtitle">Выгодные условия</div>
+					</div>
+					<div class="info__image">
+						<img src="img/info-1.svg" alt="">
+					</div>
+				</div>
+				<div class="info__column">
+					<div class="info__item" style="background-image: url('img/info-bg-1.jpg');">
+						<div class="info__title">Материнский капитал</div>
+						<div class="info__subtitle">Выгодные условия</div>
+					</div>
+					<div class="info__image">
+						<img src="img/info-1.svg" alt="">
+					</div>
+				</div>
+				<div class="info__column">
+					<div class="info__item" style="background-image: url('img/info-bg-1.jpg');">
+						<div class="info__title">Материнский капитал</div>
+						<div class="info__subtitle">Выгодные условия</div>
+					</div>
+					<div class="info__image">
+						<img src="img/info-1.svg" alt="">
+					</div>
+				</div>
 
 			</div>
 		</div>
 	</section>
+
+	<section class="answer">
+		<div class="answer__container container">
+			<h2 class="answer__title title">Вопрос-ответ</h2>
+			<div class="answer__subtitle subtitle">Ответы на популярные вопросы.</div>
+			<div class="answer__list">
+				<div class="answer__item item-answer">
+					<div class="item-answer__top">
+						<h3 class="item-answer__title">Сколько стоит?</h3>
+						<button class="item-answer__btn"></button>
+					</div>
+					<div class="item-answer__bot">
+						<div class="item-answer__text">
+							Да, мы предоставляем 10 лет гарантии на все наши проекты. В гарантийных случаях мы ремонтируем или
+							заменяем поломку.
+						</div>
+					</div>
+				</div>
+				<div class="answer__item item-answer">
+					<div class="item-answer__top">
+						<h3 class="item-answer__title">Есть ли гарантия на ваши дома?</h3>
+						<button class="item-answer__btn"></button>
+					</div>
+					<div class="item-answer__bot">
+						<div class="item-answer__text">
+							Да, мы предоставляем 10 лет гарантии на все наши проекты. В гарантийных случаях мы ремонтируем или
+							заменяем поломку.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@@include('modal-project.html')
+
 </div>
+
+
 
 @@include('footer.html')
