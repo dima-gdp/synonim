@@ -2,8 +2,9 @@ $(document).ready(function () {
 	objectFitImages();
 
 	const imgTo = $('.third__image img')
-
 	const slidersTabs = document.querySelectorAll('.portfolio__slider');
+	const fractionAll = $('.fraction__all')
+	const fractionCurrent = $('.fraction__current')
 
 
 	const slider_pag = new Swiper('.pag-hero__slider', {
@@ -200,18 +201,35 @@ $(document).ready(function () {
 
 	setDoingHeight()
 
-
+	let arraySliders = [];
 
 	slidersTabs.forEach(function (el) {
 
-		const slider_1 = new Swiper(el, {
+		arraySliders.push( new Swiper(el, {
 
 			slidesPerView: 2,
 			spaceBetween: 31,
 			observer: true,
 			observeParents: true,
 			observeSlideChildren: true,
-			loop: false,
+			loop: true,
+			navigation: {
+			nextEl: '.portfolio__next',
+			prevEl: '.portfolio__prev',
+		},
+			on: {
+				slideChange: function () {
+					fractionCurrent.html(this.realIndex + 1)
+				},
+				init: function () {
+					console.log(this.slides)
+					this.slideTo(0)
+					if (this.slides.length) {
+						fractionAll.html(this.slides.length / 2)
+						fractionCurrent.html(this.realIndex + 1)
+					}
+				},
+			}
 			// pagination: {
 			// 	el: '.swiper-pagination',
 			// 	type: 'fraction',
@@ -236,9 +254,11 @@ $(document).ready(function () {
 			// 		spaceBetween: 30,
 			// 	}
 			// }
-		});
+		})
+		)
 	})
 
+	console.log(arraySliders)
 
 
 	// Fancy-box
@@ -274,8 +294,14 @@ $(document).ready(function () {
 
 	// Табы
 	$('ul.portfolio__tabs').on('click', 'li:not(.active)', function () {
-		$(this).addClass('active').siblings().removeClass('active')
-			.closest('div.portfolio__flex').find('div.portfolio__tabs-block').removeClass('active').eq($(this).index()).addClass('active');
+		$(this).addClass('active')
+		.siblings()
+		.removeClass('active')
+			.closest('div.portfolio__flex')
+			.find('div.portfolio__tabs-block')
+			.removeClass('active')
+			.eq($(this).index())
+			.addClass('active')
 	})
 
 	// Menu-burger
