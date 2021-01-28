@@ -12,11 +12,14 @@
 	// .price__grid
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(2, 585px);
+		grid-template-columns: repeat(2, 1fr);
 		grid-column-gap: 164px;
 		grid-row-gap: 40px;
 		max-width: 1334px;
 		margin-left: auto;
+		@media (max-width: 1440px) {
+			grid-column-gap: 60px;
+		}
 	}
 	// .price__column
 	&__column {
@@ -76,6 +79,9 @@
 	&__left {
 		flex: 0 0 310px;
 		margin-right: 25px;
+		@media (max-width: 1440px) {
+			flex: 0 0 60%;
+		}
 	}
 	// .card-price__list
 	&__list {

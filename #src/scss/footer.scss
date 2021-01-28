@@ -14,6 +14,12 @@
 		padding-top: 238px;
 		margin-right: 50px;
 		flex: 0 0 450px;
+		@media (max-width: 1440px) {
+			padding-top: 70px;
+		}
+		@media (max-width: 1200px) {
+			flex: 0 0 40%;
+		}
 	}
 	// .footer__right
 	&__right {
@@ -32,6 +38,9 @@
 	// .footer-content__logo
 	&__logo {
 		margin-bottom: 90px;
+		@media (max-width: 1200px) {
+			margin-bottom: 40px;
+		}
 	}
 	// .footer-content__tel
 	&__tel {
@@ -39,12 +48,19 @@
 		font-weight: 700;
 		font-size: 30px;
 		color: #000000;
+		@media (max-width: 1200px) {
+			font-size: 23px;
+			margin-bottom: 20px;
+		}
 	}
 	// .footer-content__adress
 	&__adress {
 		margin-bottom: 25px;
 		font-size: 20px;
 		line-height: 1.33;
+		@media (max-width: 1200px) {
+			font-size: 16px;
+		}
 	}
 	// .footer-content__mail
 	&__mail {
@@ -52,6 +68,10 @@
 		font-size: 20px;
 		line-height: 1.33;
 		color: #000000;
+		@media (max-width: 1200px) {
+			font-size: 16px;
+			margin-bottom: 30px;
+		}
 	}
 	// .footer-content__btn
 	&__btn {
@@ -62,6 +82,9 @@
 		text-transform: uppercase;
 		color: #000000;
 		width: 308px;
+		@media (max-width: 1200px) {
+			margin-bottom: 50px;
+		}
 	}
 	// .footer-content__polit
 	&__polit {
@@ -70,6 +93,9 @@
 		font-size: 16px;
 		line-height: 1.5;
 		color: #5f5f5f;
+		@media (max-width: 1200px) {
+			font-size: 13px;
+		}
 	}
 	// .footer-content__dev
 	&__dev {
@@ -78,6 +104,9 @@
 		line-height: 1.5;
 		color: #5f5f5f;
 		transition: 0.3s;
+		@media (max-width: 1200px) {
+			font-size: 13px;
+		}
 		&:hover {
 			color: #fcb813;
 		}

@@ -4,10 +4,16 @@
 	&__title {
 		margin-bottom: 20px;
 		max-width: 1019px;
+		@media (max-width: 1440px) {
+			max-width: 70%;
+		}
 	}
 	// .portfolio__subtitle
 	&__subtitle {
 		margin-bottom: 83px;
+		@media (max-width: 1440px) {
+			max-width: 70%;
+		}
 	}
 	// .portfolio__main
 	&__main {

@@ -9,9 +9,17 @@
 		display: grid;
 		max-width: 1131px;
 		margin-left: 80px;
-		grid-template-columns: 380px 380px;
+		grid-template-columns: repeat(2, 380px);
 		grid-column-gap: 370px;
 		grid-row-gap: 90px;
+		justify-content: center;
+		@media (max-width: 1440px) {
+			grid-column-gap: 200px;
+		}
+		@media (max-width: 1200px) {
+			margin-left: 0;
+			grid-column-gap: 110px;
+		}
 	}
 	// .info__column
 	&__column {

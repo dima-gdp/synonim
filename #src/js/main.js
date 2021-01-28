@@ -12,6 +12,17 @@ $(document).ready(function () {
 		loop: false,
 		loopedSlides: 1,
 		slideToClickedSlide: true,
+		breakpoints: {
+			370: {
+				spaceBetween: 15,
+			},
+			993: {
+				spaceBetween: 20,
+			},
+			1440: {
+				spaceBetween: 45,
+			},
+		}
 	});
 
 
@@ -58,6 +69,23 @@ $(document).ready(function () {
 			nextEl: '.fourth__next',
 			prevEl: '.fourth__prev',
 		},
+		breakpoints: {
+			320: {
+				slidesPerView: 2,
+				spaceBetween: 40,
+				loop: false,
+			},
+
+			1201: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+			1581: {
+				loop: true,
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
+		}
 	});
 
 	const sliderDoing = new Swiper('.doing__slider', {
@@ -68,9 +96,23 @@ $(document).ready(function () {
 			nextEl: '.doing__next',
 			prevEl: '.doing__prev',
 		},
+		breakpoints: {
+			320: {
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+
+			1151: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+		}
 	});
 
 	const sliderModalTop = new Swiper('.top-modal__slider', {
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		slidesPerView: 1,
 		loop: false,
 		navigation: {
@@ -85,23 +127,26 @@ $(document).ready(function () {
 	});
 
 	const sliderModalBot = new Swiper('.bot-modal__slider', {
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		slidesPerView: 1,
 		spaceBetween: 20,
 		loop: false,
 		direction: 'vertical',
 		on: {
 			slideChange: function () {
-				$('.nav-modal__item').removeClass('nav-modal__item--active');
-				$('.nav-modal__item').eq(sliderModalBot.realIndex).addClass('nav-modal__item--active')
+				$('.nav-modal__top').removeClass('nav-modal__top--active');
+				$('.nav-modal__top').eq(sliderModalBot.realIndex).addClass('nav-modal__top--active')
 			}
 		}
 	});
 
-	$('.nav-modal__item').each(function (i, el) {
+	$('.nav-modal__top').each(function (i, el) {
 		$(el).on('click', function (ev) {
 			sliderModalBot.slideTo(i);
-			$('.nav-modal__item').removeClass('nav-modal__item--active')
-			$(this).addClass('nav-modal__item--active')
+			$('.nav-modal__top').removeClass('nav-modal__top--active')
+			$(this).addClass('nav-modal__top--active')
 		})
 	})
 
@@ -137,6 +182,24 @@ $(document).ready(function () {
 		$(this).closest('.doing__item').addClass('doing__item--active')
 
 	})
+
+	// Высота блоков с карточками
+
+	function setDoingHeight() {
+		const doingItems = $('.doing-height');
+		let maxHeight = 0;
+		doingItems.each(function (i, el) {
+
+			if ($(el).innerHeight() > maxHeight) {
+				maxHeight = $(el).innerHeight()
+			}
+		})
+
+		$('.doing__item').css('min-height', `${maxHeight}px`);
+	}
+
+	setDoingHeight()
+
 
 
 	slidersTabs.forEach(function (el) {
@@ -191,6 +254,15 @@ $(document).ready(function () {
 	$(".to-privacy").on('click', function () {
 		$.fancybox.open({
 			src: '#modal-polit',
+			touch: 'false',
+			smallBtn: false,
+			buttons: '',
+		});
+	});
+
+	$(".to-project").on('click', function () {
+		$.fancybox.open({
+			src: '#modal-project',
 			touch: 'false',
 			smallBtn: false,
 			buttons: '',

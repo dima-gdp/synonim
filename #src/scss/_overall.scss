@@ -65,6 +65,9 @@ body {
 	font-weight: 700;
 	font-size: 46px;
 	line-height: 1.26;
+	@media (max-width: 1440px) {
+		@include adaptiv(font-size, 46, 24, 1800, 320);
+	}
 }
 .subtitle {
 	font-size: 20px;

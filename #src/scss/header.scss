@@ -3,19 +3,22 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	// min-height: 296px;
 	z-index: 2;
 	// .header__container
 	&__container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-top: 44px;
-		padding-bottom: 44px;
+		padding-top: 29px;
+		padding-bottom: 29px;
 	}
 	// .header__logo
 	&__logo {
 		margin-right: 30px;
+		img {
+			max-width: 308px;
+			max-height: 63px;
+		}
 	}
 	// .header__tel-block
 	&__tel-block {
@@ -32,8 +35,6 @@
 	}
 	// .header__text
 	&__text {
-		font-family: "Montserrat";
-		font-weight: 300;
 		font-size: 14px;
 		line-height: 1.5;
 		color: #fcb813;
