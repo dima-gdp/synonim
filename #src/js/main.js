@@ -6,6 +6,8 @@ $(document).ready(function () {
 	const fractionAll = $('.fraction__all')
 	const fractionCurrent = $('.fraction__current')
 
+	const getMap = $(window).innerWidth() > '700' ? 'map' : 'map-2';
+
 
 	const slider_pag = new Swiper('.pag-hero__slider', {
 		slidesPerView: 'auto',
@@ -72,9 +74,14 @@ $(document).ready(function () {
 		},
 		breakpoints: {
 			320: {
+				slidesPerView: 1,
+				spaceBetween: 30,
+				loop: false,
+			},
+
+			577: {
 				slidesPerView: 2,
 				spaceBetween: 40,
-				loop: false,
 			},
 
 			1201: {
@@ -99,6 +106,10 @@ $(document).ready(function () {
 		},
 		breakpoints: {
 			320: {
+				slidesPerView: 1,
+				spaceBetween: 40,
+			},
+			577: {
 				slidesPerView: 2,
 				spaceBetween: 40,
 			},
@@ -205,7 +216,7 @@ $(document).ready(function () {
 
 	slidersTabs.forEach(function (el) {
 
-		arraySliders.push( new Swiper(el, {
+		arraySliders.push(new Swiper(el, {
 
 			slidesPerView: 2,
 			spaceBetween: 31,
@@ -214,9 +225,9 @@ $(document).ready(function () {
 			observeSlideChildren: true,
 			loop: true,
 			navigation: {
-			nextEl: '.portfolio__next',
-			prevEl: '.portfolio__prev',
-		},
+				nextEl: '.portfolio__next',
+				prevEl: '.portfolio__prev',
+			},
 			on: {
 				slideChange: function () {
 					fractionCurrent.html(this.realIndex + 1)
@@ -295,8 +306,8 @@ $(document).ready(function () {
 	// Табы
 	$('ul.portfolio__tabs').on('click', 'li:not(.active)', function () {
 		$(this).addClass('active')
-		.siblings()
-		.removeClass('active')
+			.siblings()
+			.removeClass('active')
 			.closest('div.portfolio__flex')
 			.find('div.portfolio__tabs-block')
 			.removeClass('active')
@@ -323,28 +334,29 @@ $(document).ready(function () {
 	})
 
 
-	if (document.getElementById('map')) {
 
-		ymaps.ready(function () {
-			var myMap = new ymaps.Map('map', {
-				center: [52.05693880953456, 118.68705543322154],
-				zoom: 4
+
+
+	ymaps.ready(function () {
+		var myMap = new ymaps.Map(getMap, {
+			center: [52.05693880953456, 118.68705543322154],
+			zoom: 4
+		});
+
+		var myPlacemark = new ymaps.Placemark([55.54055193739615, 108.71146949572154], {
+			hintContent: 'г. Борисоглебск, ул. Победы, д. 66',
+			balloonContent: 'г. Борисоглебск, ул. Победы, д. 66'
+		},
+			{
+				preset: 'islands#redIcon',
+				iconLayout: 'default#image',
+				iconImageSize: [20, 28],
+				iconImageOffset: [-19, -52]
 			});
 
-			var myPlacemark = new ymaps.Placemark([55.54055193739615, 108.71146949572154], {
-				hintContent: 'г. Борисоглебск, ул. Победы, д. 66',
-				balloonContent: 'г. Борисоглебск, ул. Победы, д. 66'
-			},
-				{
-					preset: 'islands#redIcon',
-					iconLayout: 'default#image',
-					iconImageSize: [20, 28],
-					iconImageOffset: [-19, -52]
-				});
+		myMap.geoObjects.add(myPlacemark);
+	});
 
-			myMap.geoObjects.add(myPlacemark);
-		});
-	}
 
 
 });

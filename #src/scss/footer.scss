@@ -7,6 +7,9 @@
 	&__flex {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 700px) {
+			flex-direction: column;
+		}
 	}
 	// .footer__left
 	&__left {
@@ -20,15 +23,36 @@
 		@media (max-width: 1200px) {
 			flex: 0 0 40%;
 		}
+		@media (max-width: 992px) {
+			padding-top: 30px;
+			padding-bottom: 50px;
+		}
+		@media (max-width: 700px) {
+			margin-right: 0;
+			padding-top: 0;
+		}
 	}
 	// .footer__right
 	&__right {
 		margin-right: calc((100vw - 100%) / -2);
 		flex: 0 1 1092px;
+		@media (max-width: 700px) {
+			display: none;
+		}
 	}
 	// .footer__map
 	&__map {
 		height: 100%;
+	}
+	&__map--2 {
+		@media (max-width: 700px) {
+			height: 300px;
+			margin-bottom: 30px;
+		}
+
+		@media (max-width: 576px) {
+			height: 250px;
+		}
 	}
 }
 
@@ -38,6 +62,7 @@
 	// .footer-content__logo
 	&__logo {
 		margin-bottom: 90px;
+
 		@media (max-width: 1200px) {
 			margin-bottom: 40px;
 		}
@@ -52,6 +77,10 @@
 			font-size: 23px;
 			margin-bottom: 20px;
 		}
+		@media (max-width: 992px) {
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
 	}
 	// .footer-content__adress
 	&__adress {
@@ -60,6 +89,10 @@
 		line-height: 1.33;
 		@media (max-width: 1200px) {
 			font-size: 16px;
+		}
+		@media (max-width: 992px) {
+			font-size: 15px;
+			margin-bottom: 20px;
 		}
 	}
 	// .footer-content__mail
@@ -71,6 +104,10 @@
 		@media (max-width: 1200px) {
 			font-size: 16px;
 			margin-bottom: 30px;
+		}
+		@media (max-width: 992px) {
+			font-size: 15px;
+			margin-bottom: 25px;
 		}
 	}
 	// .footer-content__btn
@@ -85,6 +122,11 @@
 		@media (max-width: 1200px) {
 			margin-bottom: 50px;
 		}
+		@media (max-width: 992px) {
+			width: 100%;
+			font-size: 15px;
+			margin-bottom: 40px;
+		}
 	}
 	// .footer-content__polit
 	&__polit {
@@ -96,6 +138,9 @@
 		@media (max-width: 1200px) {
 			font-size: 13px;
 		}
+		@media (max-width: 992px) {
+			font-size: 12px;
+		}
 	}
 	// .footer-content__dev
 	&__dev {
@@ -106,6 +151,9 @@
 		transition: 0.3s;
 		@media (max-width: 1200px) {
 			font-size: 13px;
+		}
+		@media (max-width: 992px) {
+			font-size: 12px;
 		}
 		&:hover {
 			color: #fcb813;

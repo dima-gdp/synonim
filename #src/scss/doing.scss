@@ -60,8 +60,8 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			min-height: 400px;
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			min-height: 400px;
+		@media (max-width: 935px) and (min-width: 577px) {
+			min-height: 320px;
 		}
 		&--active {
 			transform: rotateY(-180deg);
@@ -130,8 +130,8 @@
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px;
 	}
-	@media (max-width: 935px) and (min-width: 768px) {
-		padding: 40px;
+	@media (max-width: 935px) and (min-width: 577px) {
+		@include adaptiv(padding, 50, 30, 935, 577);
 	}
 	// .front-doing__img
 	&__img {
@@ -143,10 +143,10 @@
 			max-width: 75px;
 			max-height: 75px;
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			margin-bottom: 70px;
-			max-width: 75px;
-			max-height: 75px;
+		@media (max-width: 935px) and (min-width: 577px) {
+			@include adaptiv(margin-bottom, 85, 65, 935, 577);
+			@include adaptiv(max-width, 85, 65, 935, 577);
+			@include adaptiv(max-height, 85, 65, 935, 577);
 		}
 	}
 
@@ -161,8 +161,8 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			@include adaptiv(font-size, 36, 27, 1400, 1150);
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			@include adaptiv(font-size, 36, 27, 935, 768);
+		@media (max-width: 935px) and (min-width: 577px) {
+			@include adaptiv(font-size, 36, 24, 935, 577);
 		}
 	}
 
@@ -180,8 +180,8 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			font-size: 17px;
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			font-size: 17px;
+		@media (max-width: 935px) and (min-width: 577px) {
+			@include adaptiv(font-size, 18, 16, 935, 577);
 		}
 
 		span {
@@ -224,8 +224,8 @@
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px 40px 20px 40px;
 	}
-	@media (max-width: 935px) and (min-width: 768px) {
-		padding: 40px 40px 20px 40px;
+	@media (max-width: 935px) and (min-width: 577px) {
+		padding: 30px 20px 20px 30px;
 	}
 
 	// .back-doing__title
@@ -239,9 +239,9 @@
 			font-size: 27px;
 			margin-bottom: 30px;
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			font-size: 27px;
-			margin-bottom: 30px;
+		@media (max-width: 935px) and (min-width: 577px) {
+			@include adaptiv(font-size, 34, 20, 935, 577);
+			margin-bottom: 20px;
 		}
 	}
 	// .back-doing__list
@@ -252,8 +252,8 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			font-size: 15px;
 		}
-		@media (max-width: 935px) and (min-width: 768px) {
-			font-size: 15px;
+		@media (max-width: 935px) and (min-width: 577px) {
+			@include adaptiv(font-size, 16, 13, 935, 577);
 		}
 	}
 	// .back-doing__item
@@ -273,6 +273,9 @@
 		}
 		&:not(:last-child) {
 			margin-bottom: 12px;
+			@media (max-width: 935px) and (min-width: 577px) {
+				@include adaptiv(margin-bottom, 12, 5, 935, 577);
+			}
 		}
 	}
 }

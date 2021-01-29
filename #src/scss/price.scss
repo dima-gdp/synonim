@@ -16,9 +16,20 @@
 		grid-column-gap: 164px;
 		grid-row-gap: 40px;
 		max-width: 1334px;
-		margin-left: auto;
+		margin: 0 auto;
 		@media (max-width: 1440px) {
 			grid-column-gap: 60px;
+		}
+		@media (max-width: 992px) and (min-width: 721px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 720px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@media (max-width: 576px) {
+		}
+		@media (max-width: 375px) {
+			margin: 0 -20px;
 		}
 	}
 	// .price__column
@@ -33,6 +44,9 @@
 	min-height: 783px;
 	display: flex;
 	flex-direction: column;
+	@media (max-width: 992px) {
+		min-height: 650px;
+	}
 	// .card-price__top
 	&__top {
 		padding: 33px 33px 42px 49px;
@@ -40,6 +54,14 @@
 		background-size: cover;
 		background-position: center;
 		position: relative;
+		@media (max-width: 992px) and (min-width: 721px) {
+			@include adaptiv(padding-right, 33, 15, 992, 720);
+			@include adaptiv(padding-left, 33, 15, 992, 720);
+		}
+		@media (max-width: 576px) {
+			@include adaptiv(padding-right, 33, 15, 576, 320);
+			@include adaptiv(padding-left, 33, 15, 576, 320);
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -67,6 +89,12 @@
 		text-transform: uppercase;
 		color: #ffffff;
 		position: relative;
+		@media (max-width: 992px) and (min-width: 721px) {
+			@include adaptiv(font-size, 36, 21, 992, 720);
+		}
+		@media (max-width: 576px) {
+			@include adaptiv(font-size, 36, 21, 576, 320);
+		}
 	}
 	// .card-price__main
 	&__main {
@@ -74,6 +102,14 @@
 		display: flex;
 		justify-content: space-between;
 		flex: 1 1 auto;
+		@media (max-width: 992px) and (min-width: 721px) {
+			@include adaptiv(padding-right, 27, 15, 992, 721);
+			@include adaptiv(padding-left, 44, 15, 992, 721);
+		}
+		@media (max-width: 576px) {
+			@include adaptiv(padding-right, 27, 15, 576, 320);
+			@include adaptiv(padding-left, 44, 15, 576, 320);
+		}
 	}
 	// .card-price__left
 	&__left {
@@ -81,6 +117,14 @@
 		margin-right: 25px;
 		@media (max-width: 1440px) {
 			flex: 0 0 60%;
+		}
+		@media (max-width: 992px) and (min-width: 721px) {
+			flex: 0 0 50%;
+			margin-right: 20px;
+		}
+		@media (max-width: 420px) {
+			flex: 0 0 50%;
+			margin-right: 20px;
 		}
 	}
 	// .card-price__list
@@ -101,6 +145,12 @@
 		align-items: center;
 		justify-content: space-between;
 		padding-left: 52px;
+		@media (max-width: 992px) {
+			padding-left: 0;
+		}
+		@media (max-width: 850px) and (min-width: 577px) {
+			flex-direction: column;
+		}
 	}
 	// .card-price__price
 	&__price {
@@ -109,6 +159,13 @@
 		font-size: 24px;
 		line-height: lh(28, 24);
 		color: #000000;
+		@media (max-width: 1200px) and (min-width: 850px) {
+			@include adaptiv(font-size, 24, 18, 1200, 850);
+		}
+		@media (max-width: 850px) and (min-width: 577px) {
+			margin-bottom: 20px;
+			margin-right: 0;
+		}
 	}
 	// .card-price__btn
 	&__btn {
@@ -119,6 +176,17 @@
 		color: #ffffff;
 		background: #fcb813;
 		flex: 0 0 210px;
+		@media (max-width: 1200px) {
+			flex: 0 0 45%;
+			font-size: 18px;
+		}
+		@media (max-width: 992px) {
+			min-height: 45px;
+			font-size: 16px;
+		}
+		@media (max-width: 850px) and (min-width: 577px) {
+			width: 100%;
+		}
 	}
 }
 .price-item {
@@ -147,6 +215,16 @@
 		color: #000000;
 		padding-left: 14px;
 		position: relative;
+
+		@media (max-width: 992px) and (min-width: 721px) {
+			@include adaptiv(font-size, 20, 14, 992, 721);
+		}
+		@media (max-width: 576px) {
+			@include adaptiv(font-size, 20, 14, 576, 320);
+		}
+		@media (max-width: 420px) {
+			margin-right: 5px;
+		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -195,9 +273,25 @@
 	&__image {
 		margin-right: 12px;
 		flex: 0 0 39px;
+		@media (max-width: 992px) and (min-width: 721px) {
+			@include adaptiv(flex-basis, 39, 25, 992, 721);
+		}
+
+		@media (max-width: 576px) {
+			@include adaptiv(flex-basis, 39, 25, 576, 320);
+		}
 		img {
 			max-width: 39px;
 			max-height: 39px;
+			@media (max-width: 992px) and (min-width: 721px) {
+				@include adaptiv(max-width, 39, 25, 992, 721);
+				@include adaptiv(max-height, 39, 25, 992, 721);
+			}
+
+			@media (max-width: 576px) {
+				@include adaptiv(max-width, 39, 25, 576, 320);
+				@include adaptiv(max-height, 39, 25, 576, 320);
+			}
 		}
 	}
 	// .right-price__text

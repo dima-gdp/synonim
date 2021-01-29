@@ -8,6 +8,9 @@
 		width: 42.4%;
 		height: 1052px;
 		background: #e5e5e5;
+		@media (max-width: 992px) {
+			display: none;
+		}
 	}
 	// .consultation__container
 	&__container {
@@ -26,6 +29,10 @@
 		}
 		@media (max-width: 1440px) {
 			flex: 0 0 50%;
+		}
+		@media (max-width: 992px) {
+			margin-right: 0px;
+			flex: 0 0 100%;
 		}
 	}
 	// .consultation__title
@@ -53,6 +60,9 @@
 	// .consultation__right
 	&__right {
 		min-height: 694px;
+		@media (max-width: 992px) {
+			display: none;
+		}
 	}
 	// .consultation__img
 	&__img {
@@ -170,17 +180,30 @@
 		@media (max-width: 1200px) {
 			max-width: none;
 		}
+		@media (max-width: 992px) {
+			max-width: 70%;
+			margin: 0px auto 20px auto;
+		}
 	}
+
 	// .bot-consultation__from-top
 	&__from-top {
 		display: flex;
 		margin-bottom: 34px;
+		@media (max-width: 992px) {
+			flex-direction: column;
+		}
 	}
 	// .bot-consultation__span
 	.wpcf7-form-control-wrap {
 		height: 60px;
 		margin-right: 35px;
 		flex: 0 1 321px;
+		@media (max-width: 992px) {
+			flex: 1 1 auto;
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
 		input {
 			display: flex;
 			align-items: center;
@@ -211,6 +234,9 @@
 		text-transform: uppercase;
 		@media (max-width: 1200px) {
 			flex: 0 0 230px;
+		}
+		@media (max-width: 992px) {
+			flex: 1 1 auto;
 		}
 	}
 	// .bot-consultation__bot
