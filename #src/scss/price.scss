@@ -3,11 +3,18 @@
 	&__container {
 		padding-top: 100px;
 		padding-bottom: 131px;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-top, 100, 50, 1200, 320);
+			@include adaptiv(padding-bottom, 131, 50, 1200, 320);
+		}
 	}
 	// .price__title
 	&__title {
 		margin-bottom: 78px;
 		color: #000;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 78, 25, 1200, 320);
+		}
 	}
 	// .price__grid
 	&__grid {
@@ -29,7 +36,7 @@
 		@media (max-width: 576px) {
 		}
 		@media (max-width: 375px) {
-			margin: 0 -20px;
+			// margin: 0 -20px;
 		}
 	}
 	// .price__column
@@ -107,8 +114,8 @@
 			@include adaptiv(padding-left, 44, 15, 992, 721);
 		}
 		@media (max-width: 576px) {
-			@include adaptiv(padding-right, 27, 15, 576, 320);
-			@include adaptiv(padding-left, 44, 15, 576, 320);
+			@include adaptiv(padding-right, 27, 5, 576, 320);
+			@include adaptiv(padding-left, 44, 5, 576, 320);
 		}
 	}
 	// .card-price__left
@@ -151,6 +158,9 @@
 		@media (max-width: 850px) and (min-width: 577px) {
 			flex-direction: column;
 		}
+		@media (max-width: 374px) {
+			flex-direction: column;
+		}
 	}
 	// .card-price__price
 	&__price {
@@ -165,6 +175,14 @@
 		@media (max-width: 850px) and (min-width: 577px) {
 			margin-bottom: 20px;
 			margin-right: 0;
+		}
+
+		@media (max-width: 576px) {
+			@include adaptiv(font-size, 24, 18, 576, 374);
+		}
+		@media (max-width: 374px) {
+			font-size: 18px;
+			margin-bottom: 15px;
 		}
 	}
 	// .card-price__btn
@@ -185,6 +203,9 @@
 			font-size: 16px;
 		}
 		@media (max-width: 850px) and (min-width: 577px) {
+			width: 100%;
+		}
+		@media (max-width: 374px) {
 			width: 100%;
 		}
 	}

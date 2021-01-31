@@ -2,6 +2,9 @@
 	// .answer__container
 	&__container {
 		padding-bottom: 149px;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-bottom, 149, 90, 1200, 320);
+		}
 	}
 	// .answer__title
 	&__title {
@@ -12,6 +15,9 @@
 	&__subtitle {
 		margin-bottom: 95px;
 		color: #5f5f5f;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 95, 25, 1200, 320);
+		}
 	}
 	// .answer__list
 	&__list {
@@ -28,8 +34,14 @@
 	padding-left: 76px;
 	padding-right: 32px;
 	border-bottom: 1px solid #e5e5e5;
+
 	&:last-child {
 		border-bottom: none;
+	}
+
+	@media (max-width: 1200px) {
+		@include adaptiv(padding-left, 76, 15, 1200, 320);
+		@include adaptiv(padding-right, 32, 15, 1200, 320);
 	}
 	// .item-third__top
 	&__top {
@@ -39,6 +51,10 @@
 		padding-top: 21px;
 		padding-bottom: 21px;
 		cursor: pointer;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-top, 21, 8, 1200, 320);
+			@include adaptiv(padding-bottom, 21, 8, 1200, 320);
+		}
 		&--active {
 			.item-answer__btn::before {
 				display: none;
@@ -54,6 +70,9 @@
 		font-size: 30px;
 		line-height: 1.33;
 		color: #000;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 30, 17, 1200, 320);
+		}
 	}
 	// .item-third__btn
 	&__btn {
@@ -87,11 +106,18 @@
 		padding-top: 28px;
 		padding-bottom: 28px;
 		display: none;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-top, 28, 5, 1200, 320);
+			@include adaptiv(padding-bottom, 21, 10, 1200, 320);
+		}
 	}
 	// .item-third__text
 	&__text {
 		color: #000;
 		font-size: 20px;
 		line-height: 1.5;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 20, 15, 1200, 320);
+		}
 	}
 }

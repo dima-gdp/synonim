@@ -5,15 +5,32 @@
 	&__container {
 		padding-top: 124px;
 		padding-bottom: 142px;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-bottom, 142, 50, 1200, 320);
+			@include adaptiv(padding-top, 124, 80, 1200, 320);
+		}
 	}
 	// .second__title
 	&__title {
 		margin-bottom: 26px;
 		color: #000000;
+		@media (max-width: 576px) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 15px;
+		}
 	}
 	// .second__subtitle
 	&__subtitle {
 		margin-bottom: 69px;
+		font-size: 20px;
+		line-height: 1.5;
+		color: #5f5f5f;
+		@media (max-width: 1200px) {
+			@include adaptiv(font-size, 20, 17, 1200, 320);
+			@include adaptiv(margin-bottom, 69, 20, 1200, 320);
+		}
 	}
 	// .second__grid
 	&__grid {
@@ -26,6 +43,16 @@
 		}
 		@media (max-width: 768px) {
 			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 576px) {
+			grid-row-gap: 30px;
+		}
+		@media (max-width: 420px) {
+			grid-column-gap: 20px;
+		}
+
+		@media (max-width: 374px) {
+			grid-template-columns: repeat(1, 1fr);
 		}
 	}
 	// .second__column
@@ -45,8 +72,11 @@
 		@media (max-width: 1440px) and (min-width: 769px) {
 			@include adaptiv(margin-bottom, 48, 20, 1440, 769);
 		}
-		@media (max-width: 768px) and (min-width: 461px) {
-			@include adaptiv(margin-bottom, 48, 20, 768, 460);
+		@media (max-width: 768px) and (min-width: 375px) {
+			@include adaptiv(margin-bottom, 48, 15, 768, 375);
+		}
+		@media (max-width: 374px) {
+			@include adaptiv(margin-bottom, 20, 15, 374, 320);
 		}
 		img {
 			position: absolute;
@@ -68,8 +98,11 @@
 		@media (max-width: 1440px) and (min-width: 769px) {
 			@include adaptiv(font-size, 30, 20, 1440, 769);
 		}
-		@media (max-width: 768px) and (min-width: 461px) {
-			@include adaptiv(font-size, 30, 20, 768, 460);
+		@media (max-width: 768px) and (min-width: 375px) {
+			@include adaptiv(font-size, 30, 16, 768, 375);
+		}
+		@media (max-width: 374px) {
+			@include adaptiv(font-size, 26, 19, 374, 320);
 		}
 	}
 }

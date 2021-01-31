@@ -30,18 +30,31 @@
 		position: relative;
 		padding-top: 110px;
 		padding-bottom: 118px;
+		@media (max-width: 1200px) {
+			@include adaptiv(padding-top, 110, 50, 1200, 320);
+			@include adaptiv(padding-bottom, 118, 50, 1200, 320);
+		}
 	}
 	// .doing__title
 	&__title {
 		margin-bottom: 20px;
 		color: #fff;
 		max-width: 70%;
+		@media (max-width: 992px) {
+			max-width: none;
+		}
 	}
 	// .doing__subtitle
 	&__subtitle {
 		margin-bottom: 101px;
 		color: #fff;
 		max-width: 70%;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 101, 30, 1200, 320);
+		}
+		@media (max-width: 992px) {
+			max-width: none;
+		}
 	}
 	// .doing__slider
 	&__slider {
@@ -60,9 +73,10 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			min-height: 400px;
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			min-height: 320px;
+		@media (max-width: 935px) {
+			min-height: 300px;
 		}
+
 		&--active {
 			transform: rotateY(-180deg);
 		}
@@ -98,7 +112,10 @@
 		display: flex;
 		justify-content: flex-end;
 		@media (max-width: 1440px) {
-			padding-right: 100px;
+			padding-right: 9%;
+		}
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-top, 62, 20, 1200, 320);
 		}
 	}
 }
@@ -130,8 +147,15 @@
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px;
 	}
-	@media (max-width: 935px) and (min-width: 577px) {
-		@include adaptiv(padding, 50, 30, 935, 577);
+	@media (max-width: 935px) and (min-width: 486px) {
+		@include adaptiv(padding-left, 50, 15, 935, 486);
+		@include adaptiv(padding-right, 50, 15, 935, 486);
+		padding-bottom: 20px;
+		padding-top: 30px;
+	}
+	@media (max-width: 485px) {
+		@include adaptiv(padding-left, 50, 30, 485, 320);
+		@include adaptiv(padding-right, 50, 30, 485, 320);
 	}
 	// .front-doing__img
 	&__img {
@@ -143,10 +167,15 @@
 			max-width: 75px;
 			max-height: 75px;
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			@include adaptiv(margin-bottom, 85, 65, 935, 577);
-			@include adaptiv(max-width, 85, 65, 935, 577);
-			@include adaptiv(max-height, 85, 65, 935, 577);
+		@media (max-width: 935px) and (min-width: 486px) {
+			@include adaptiv(margin-bottom, 85, 65, 935, 486);
+			@include adaptiv(max-width, 85, 55, 935, 486);
+			@include adaptiv(max-height, 85, 55, 935, 486);
+		}
+		@media (max-width: 485px) {
+			@include adaptiv(margin-bottom, 85, 55, 485, 320);
+			@include adaptiv(max-width, 85, 65, 485, 320);
+			@include adaptiv(max-height, 85, 65, 485, 320);
 		}
 	}
 
@@ -161,8 +190,11 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			@include adaptiv(font-size, 36, 27, 1400, 1150);
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			@include adaptiv(font-size, 36, 24, 935, 577);
+		@media (max-width: 935px) and (min-width: 486px) {
+			@include adaptiv(font-size, 36, 21, 935, 486);
+		}
+		@media (max-width: 485px) {
+			@include adaptiv(font-size, 36, 24, 485, 320);
 		}
 	}
 
@@ -180,8 +212,11 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			font-size: 17px;
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			@include adaptiv(font-size, 18, 16, 935, 577);
+		@media (max-width: 935px) and (min-width: 486px) {
+			@include adaptiv(font-size, 18, 14, 935, 486);
+		}
+		@media (max-width: 485px) {
+			@include adaptiv(font-size, 18, 15, 485, 320);
 		}
 
 		span {
@@ -224,8 +259,16 @@
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px 40px 20px 40px;
 	}
-	@media (max-width: 935px) and (min-width: 577px) {
+	@media (max-width: 935px) and (min-width: 486px) {
 		padding: 30px 20px 20px 30px;
+	}
+	@media (max-width: 576px) and (min-width: 486px) {
+		padding: 20px 10px 20px 10px !important;
+	}
+	@media (max-width: 485px) {
+		@include adaptiv(padding-left, 63, 15, 485, 320);
+		@include adaptiv(padding-right, 63, 15, 485, 320);
+		@include adaptiv(padding-top, 64, 25, 485, 320);
 	}
 
 	// .back-doing__title
@@ -239,9 +282,13 @@
 			font-size: 27px;
 			margin-bottom: 30px;
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			@include adaptiv(font-size, 34, 20, 935, 577);
+		@media (max-width: 935px) and (min-width: 486px) {
+			@include adaptiv(font-size, 34, 17, 935, 486);
 			margin-bottom: 20px;
+		}
+		@media (max-width: 485px) {
+			@include adaptiv(font-size, 34, 19, 485, 320);
+			@include adaptiv(margin-bottom, 37, 20, 485, 320);
 		}
 	}
 	// .back-doing__list
@@ -252,8 +299,11 @@
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			font-size: 15px;
 		}
-		@media (max-width: 935px) and (min-width: 577px) {
-			@include adaptiv(font-size, 16, 13, 935, 577);
+		@media (max-width: 935px) and (min-width: 486px) {
+			@include adaptiv(font-size, 16, 12, 935, 486);
+		}
+		@media (max-width: 485px) {
+			@include adaptiv(font-size, 16, 13, 485, 320);
 		}
 	}
 	// .back-doing__item
@@ -273,8 +323,11 @@
 		}
 		&:not(:last-child) {
 			margin-bottom: 12px;
-			@media (max-width: 935px) and (min-width: 577px) {
-				@include adaptiv(margin-bottom, 12, 5, 935, 577);
+			@media (max-width: 935px) and (min-width: 486px) {
+				@include adaptiv(margin-bottom, 12, 5, 935, 486);
+			}
+			@media (max-width: 485px) and (min-width: 320px) {
+				@include adaptiv(margin-bottom, 12, 5, 485, 320);
 			}
 		}
 	}

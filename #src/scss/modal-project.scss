@@ -10,9 +10,10 @@
 	}
 	// .modal-project__container
 	&__container {
-		max-width: 1044px;
-		margin-left: 30px;
-		padding: 0px 20px 38px 20px;
+		padding: 0px 66px 38px 30px;
+		@media (max-width: 1080px) {
+			padding: 0px 20px 38px 20px;
+		}
 	}
 	// .modal-project__top
 	&__top {
@@ -26,12 +27,23 @@
 .top-modal {
 	display: flex;
 	justify-content: space-between;
+	@media (max-width: 649px) {
+		flex-direction: column;
+	}
 	// .top-modal__left
 	&__left {
 		margin-left: -30px;
 		margin-right: 40px;
-		flex: 0 0 643px;
-		max-width: 643px;
+		max-width: 64%;
+		@media (max-width: 992px) {
+			margin-right: 30px;
+		}
+		@media (max-width: 649px) {
+			order: 1;
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 	// .top-modal__slider
 	&__slider {
@@ -52,6 +64,12 @@
 			opacity: 1;
 			border-radius: 0;
 			transition: 0.3s;
+			@media (max-width: 992px) and (min-width: 650px) {
+				width: 20px;
+			}
+			@media (max-width: 576px) {
+				width: 20px;
+			}
 			&:not(:last-child) {
 				margin-right: 15px;
 			}
@@ -59,6 +77,12 @@
 		.swiper-pagination-bullet-active {
 			width: 70px;
 			background: #fcb813;
+			@media (max-width: 992px) and (min-width: 650px) {
+				width: 40px;
+			}
+			@media (max-width: 576px) {
+				width: 40px;
+			}
 		}
 	}
 	// .top-modal__slider
@@ -74,18 +98,28 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
-		min-width: 357px;
 		margin-left: auto;
+		position: relative;
 	}
 	// .top-modal__control
 	&__control {
 		margin-right: 30px;
-		margin-left: 85px;
-		margin-bottom: 10px;
 		justify-content: center;
+		@media (max-width: 992px) and (min-width: 650px) {
+			margin-right: 20px;
+		}
+		@media (max-width: 576px) {
+			margin-right: 20px;
+		}
 	}
 	// .top-modal__prev
 	&__prev {
+		@media (max-width: 992px) {
+			margin-right: 20px;
+		}
+		@media (max-width: 576px) {
+			margin-right: 20px;
+		}
 		svg path {
 			fill: #fff;
 		}
@@ -97,16 +131,34 @@
 		}
 	}
 	&__pagination {
-		min-width: 205px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+		padding-right: 120px;
+		padding-left: 90px;
+		@media (max-width: 992px) and (min-width: 650px) {
+			padding-right: 100px;
+			padding-left: 50px;
+		}
+		@media (max-width: 576px) {
+			padding-right: 100px;
+			padding-left: 50px;
+		}
 	}
 	// .top-modal__right
 	&__right {
-		flex: 0 0 322px;
+		flex: 1 1 auto;
 		padding-top: 39px;
+		@media (max-width: 649px) {
+			order: 0;
+			margin-bottom: 30px;
+		}
 	}
 	// .top-modal__title
 	&__title {
@@ -115,6 +167,10 @@
 		font-size: 30px;
 		line-height: 1.33;
 		color: #000000;
+		@media (max-width: 992px) {
+			@include adaptiv(font-size, 30, 20, 992, 320);
+			margin-bottom: 20px;
+		}
 	}
 	// .top-modal__table
 	&__table {
@@ -133,14 +189,27 @@
 		font-size: 14px;
 		line-height: 1.57;
 		color: #000000;
+		@media (max-width: 992px) {
+			font-size: 12px;
+			padding-right: 20px;
+		}
+		@media (max-width: 649px) {
+			@include adaptiv(font-size, 14, 12, 649, 320);
+		}
 	}
 	// .top-modal__value
 	&__value {
-		min-width: 120px;
+		min-width: 40%;
 		font-size: 14px;
 		line-height: 1.57;
 		color: #000000;
 		font-weight: 700;
+		@media (max-width: 992px) {
+			font-size: 12px;
+		}
+		@media (max-width: 649px) {
+			@include adaptiv(font-size, 14, 12, 649, 320);
+		}
 	}
 }
 
@@ -148,16 +217,33 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	@media (max-width: 850px) {
+		flex-wrap: wrap;
+	}
 	// .bot-modal__nav
 	&__nav {
-		flex: 0 0 146px;
+		flex: 0 0 14.5%;
 		margin-right: 35px;
+		@media (max-width: 1000px) {
+			margin-right: 25px;
+			flex: 0 0 120px;
+		}
+		@media (max-width: 850px) {
+			flex: 0 0 30%;
+		}
 	}
 	// .bot-modal__slider-wrapper
 	&__slider-wrapper {
-		flex: 0 0 434px;
+		flex: 0 0 43.2%;
 
-		margin-right: 40px;
+		margin-right: 80px;
+		@media (max-width: 1000px) {
+			margin-right: 25px;
+			flex: 0 0 400px;
+		}
+		@media (max-width: 850px) {
+			flex: 0 0 60%;
+		}
 	}
 	// .bot-modal__slider
 	&__slider {
@@ -171,8 +257,11 @@
 	}
 	// .bot-modal__form
 	&__form {
-		flex: 0 0 318px;
-		margin-left: 40px;
+		flex: 1 1 auto;
+		@media (max-width: 850px) {
+			flex: 0 0 50%;
+			margin: 20px auto 0 auto;
+		}
 	}
 }
 .nav-modal {
@@ -183,6 +272,9 @@
 		line-height: 1.43;
 		color: #000000;
 		position: relative;
+		@media (max-width: 1000px) and (min-width: 851px) {
+			font-size: 12px;
+		}
 
 		&::before {
 			content: "";
@@ -195,6 +287,9 @@
 		}
 		&:not(:last-child) {
 			padding-bottom: 40px;
+			@media (max-width: 1000px) and (min-width: 851px) {
+				padding-bottom: 25px;
+			}
 		}
 		&:last-child {
 			&::before {
@@ -243,20 +338,25 @@
 		line-height: 1.5;
 		text-transform: uppercase;
 		color: #000000;
+		@media (max-width: 1000px) {
+			@include adaptiv(font-size, 20, 16, 1000, 850);
+		}
 	}
 	.wpcf7-form-control-wrap {
 		margin-bottom: 15px;
-		height: 50px;
 		input {
 			display: flex;
 			align-items: center;
 			padding: 5px 15px 5px 17px;
 			width: 100%;
-			height: 100%;
+			height: 50px;
 			border: 1px solid #a4a4a4;
 			font-size: 16px;
 			color: #a4a4a4;
 			background-color: #fff;
+			@media (max-width: 1000px) {
+				height: 45px;
+			}
 			&:focus {
 				color: #000;
 				border: 1px solid #000;
@@ -280,12 +380,19 @@
 		color: #000000;
 		background: #fcb813;
 		text-transform: uppercase;
+		@media (max-width: 1000px) {
+			min-height: 45px !important;
+			font-size: 18px;
+		}
 	}
 	// .form-modal__privacy
 	&__privacy {
 		font-size: 12px;
 		line-height: 1.33;
 		color: #222226;
+		@media (max-width: 1000px) {
+			font-size: 11px;
+		}
 		.to-privacy {
 			text-decoration: underline;
 		}

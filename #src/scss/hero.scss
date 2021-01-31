@@ -5,7 +5,10 @@
 		padding-top: 124px;
 		position: relative;
 		@media (max-width: 576px) {
-			padding-top: 85px;
+			padding-top: 105px;
+		}
+		@media (max-width: 421px) {
+			padding-top: 90px;
 		}
 		@media (max-width: 374px) {
 			padding-top: 124px;
@@ -19,6 +22,11 @@
 			height: 48%;
 			background: url("../img/line.svg") 0 100% / contain no-repeat;
 			z-index: 3;
+			@media (max-width: 480px) {
+				left: 0;
+				width: 94%;
+				height: 22%;
+			}
 		}
 	}
 	// .hero__flex
@@ -104,6 +112,12 @@
 			min-height: 45px;
 			font-size: 11px;
 		}
+		@media (max-width: 768px) {
+			margin: 0 auto;
+			width: 100%;
+			max-width: 292px;
+			font-size: 12px;
+		}
 	}
 	// .hero__right
 	&__right {
@@ -161,6 +175,11 @@
 	@media (max-width: 768px) {
 		height: 103px;
 	}
+	@media (max-width: 480px) {
+		left: 20%;
+		bottom: 30px;
+		height: 70px;
+	}
 	// .pag-hero__slider
 	&__slider {
 		overflow: hidden;
@@ -173,7 +192,10 @@
 			user-select: none;
 			width: 25px;
 			@media (max-width: 1800px) {
-				@include adaptiv(font-size, 18, 16, 1800, 993);
+				@include adaptiv(font-size, 18, 15, 1800, 769);
+			}
+			@media (max-width: 768px) {
+				@include adaptiv(font-size, 18, 15, 768, 320);
 			}
 		}
 		.swiper-slide-thumb-active {

@@ -16,11 +16,23 @@ $(document).ready(function () {
 		loopedSlides: 1,
 		slideToClickedSlide: true,
 		breakpoints: {
-			370: {
+			320: {
+				spaceBetween: 15,
+			},
+			374: {
+				spaceBetween: 25,
+			},
+			577: {
+				spaceBetween: 35,
+			},
+			625: {
+				spaceBetween: 40,
+			},
+			769: {
 				spaceBetween: 15,
 			},
 			993: {
-				spaceBetween: 20,
+				spaceBetween: 30,
 			},
 			1440: {
 				spaceBetween: 45,
@@ -79,6 +91,10 @@ $(document).ready(function () {
 				loop: false,
 			},
 
+			486: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
 			577: {
 				slidesPerView: 2,
 				spaceBetween: 40,
@@ -107,7 +123,11 @@ $(document).ready(function () {
 		breakpoints: {
 			320: {
 				slidesPerView: 1,
-				spaceBetween: 40,
+				spaceBetween: 20,
+			},
+			486: {
+				slidesPerView: 2,
+				spaceBetween: 20,
 			},
 			577: {
 				slidesPerView: 2,
@@ -131,11 +151,15 @@ $(document).ready(function () {
 			nextEl: '.top-modal__next',
 			prevEl: '.top-modal__prev',
 		},
-		pagination: {
-			el: '.top-modal__pagination',
-			type: 'bullets',
-			clickable: true,
-		},
+		breakpoints: {
+			456: {
+				pagination: {
+					el: '.top-modal__pagination',
+					type: 'bullets',
+					clickable: true,
+				},
+			},
+		}
 	});
 
 	const sliderModalBot = new Swiper('.bot-modal__slider', {
