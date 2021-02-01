@@ -231,6 +231,12 @@
 		@media (max-width: 850px) {
 			flex: 0 0 30%;
 		}
+		@media (max-width: 649px) {
+			display: flex;
+			flex: 0 0 100%;
+			flex-wrap: wrap;
+			margin: 0px -10px 20px -10px;
+		}
 	}
 	// .bot-modal__slider-wrapper
 	&__slider-wrapper {
@@ -242,7 +248,12 @@
 			flex: 0 0 400px;
 		}
 		@media (max-width: 850px) {
-			flex: 0 0 60%;
+			flex: 0 0 65%;
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+		@media (max-width: 649px) {
+			flex: 0 0 100%;
 		}
 	}
 	// .bot-modal__slider
@@ -259,8 +270,11 @@
 	&__form {
 		flex: 1 1 auto;
 		@media (max-width: 850px) {
-			flex: 0 0 50%;
+			max-width: 399px;
 			margin: 20px auto 0 auto;
+		}
+		@media (max-width: 649px) {
+			margin-top: 0;
 		}
 	}
 }
@@ -275,6 +289,17 @@
 		@media (max-width: 1000px) and (min-width: 851px) {
 			font-size: 12px;
 		}
+		@media (max-width: 649px) {
+			margin: 0px 10px 10px 10px;
+			border-radius: 20px;
+			color: #fff;
+			font-size: 16px;
+			min-height: 0;
+			overflow: hidden;
+		}
+		@media (max-width: 420px) {
+			font-size: 15px;
+		}
 
 		&::before {
 			content: "";
@@ -284,11 +309,17 @@
 			height: 100%;
 			width: 1px;
 			background-color: #000000;
+			@media (max-width: 649px) {
+				display: none;
+			}
 		}
 		&:not(:last-child) {
 			padding-bottom: 40px;
 			@media (max-width: 1000px) and (min-width: 851px) {
 				padding-bottom: 25px;
+			}
+			@media (max-width: 649px) {
+				padding: 0;
 			}
 		}
 		&:last-child {
@@ -302,6 +333,12 @@
 		padding-left: 31px;
 		cursor: pointer;
 		user-select: none;
+
+		@media (max-width: 649px) {
+			padding: 7px 15px 7px 15px;
+			background-color: #000;
+		}
+
 		&--active {
 			.nav-modal__dot {
 				&::before {
@@ -316,6 +353,11 @@
 					border-radius: 100%;
 				}
 			}
+
+			@media (max-width: 649px) {
+				color: #000;
+				background-color: #fcb813;
+			}
 		}
 	}
 	&__dot {
@@ -327,6 +369,9 @@
 		border-radius: 100%;
 		border: 1px solid #000000;
 		background: #fff;
+		@media (max-width: 649px) {
+			display: none;
+		}
 	}
 }
 .form-modal {
@@ -340,6 +385,10 @@
 		color: #000000;
 		@media (max-width: 1000px) {
 			@include adaptiv(font-size, 20, 16, 1000, 850);
+		}
+		@media (max-width: 850px) {
+			@include adaptiv(font-size, 20, 16, 850, 320);
+			text-align: center;
 		}
 	}
 	.wpcf7-form-control-wrap {
@@ -380,6 +429,31 @@
 		color: #000000;
 		background: #fcb813;
 		text-transform: uppercase;
+		transform: perspective(1px) translateZ(0);
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #000;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+		}
+		&:hover {
+			color: #fff;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
 		@media (max-width: 1000px) {
 			min-height: 45px !important;
 			font-size: 18px;

@@ -137,8 +137,34 @@
 		font-size: 16px;
 		background: #fcb813;
 		text-transform: uppercase;
-		color: #000000;
+		color: #000;
 		width: 308px;
+		transform: perspective(1px) translateZ(0);
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #000;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+		}
+		&:hover {
+			color: #fff;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+
 		@media (max-width: 1200px) {
 			margin-bottom: 50px;
 		}

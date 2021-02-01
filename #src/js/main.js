@@ -48,33 +48,8 @@ $(document).ready(function () {
 		thumbs: {
 			swiper: slider_pag,
 		}
-		// breakpoints: {
-		// 	370: {
-		// 		slidesPerView: 1,
-		// 		spaceBetween: 0,
-		// 	},
-		// 	371: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 12,
-		// 	},
-		// 	421: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 20,
-		// 	},
-		// 	577: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 40,
-		// 	},
-		// 	993: {
-		// 		slidesPerView: 1,
-		// 		spaceBetween: 0,
-		// 	},
-		// }
 	});
 
-
-	// slider_hero.controller.control = [slider_pag];
-	// slider_pag.controller.control = [slider_hero];
 
 	const slider2 = new Swiper('.fourth__slider', {
 		slidesPerView: 4,
@@ -192,12 +167,26 @@ $(document).ready(function () {
 
 	})
 
+	$('.item-third__bot').eq(0).slideDown()
+
 	$('.item-third__top').on('click', function (ev) {
 		let text = $(this).next('.item-third__bot');
 		let imgFrom = $(this).attr('data-img');
-		imgTo.attr('src', imgFrom);
-		$(this).toggleClass('item-third__top--active')
-		text.stop().slideToggle();
+
+		if ($(this).hasClass('item-third__top--active')) {
+			$('.item-third__bot').stop().slideUp();
+			$('.item-third__top').removeClass('item-third__top--active');
+
+		}
+
+		else {
+			$('.item-third__bot').stop().slideUp();
+			$('.item-third__top').removeClass('item-third__top--active');
+			imgTo.attr('src', imgFrom);
+			$(this).addClass('item-third__top--active');
+			text.stop().slideDown();
+		}
+
 	})
 
 	$('.item-answer__top').on('click', function (ev) {
@@ -207,9 +196,22 @@ $(document).ready(function () {
 	})
 
 	$('.price-item__top').on('click', function (ev) {
-		let text = $(this).next('.price-item__bot');
-		$(this).toggleClass('price-item__top--active')
-		text.stop().slideToggle();
+		let cardList = ev.target.closest('.card-price__list');
+
+		if ($(this).hasClass('price-item__top--active')) {
+			$(cardList).find('.price-item__bot').stop().slideUp();
+			$(cardList).find('.price-item__top').removeClass('price-item__top--active')
+
+		}
+
+		else {
+			$(cardList).find('.price-item__bot').stop().slideUp();
+			$(cardList).find('.price-item__top').removeClass('price-item__top--active')
+			let text = $(this).next('.price-item__bot');
+			$(this).toggleClass('price-item__top--active')
+			text.stop().slideDown();
+		}
+
 	})
 
 
@@ -238,69 +240,58 @@ $(document).ready(function () {
 
 	let arraySliders = [];
 
-	slidersTabs.forEach(function (el) {
+	slidersTabs.forEach(function (el, i) {
 
 		arraySliders.push(new Swiper(el, {
 
-			slidesPerView: 2,
-			spaceBetween: 31,
+			slidesPerView: 1,
+			spaceBetween: 40,
 			observer: true,
 			observeParents: true,
 			observeSlideChildren: true,
-			loop: true,
+			loop: false,
 			navigation: {
-				nextEl: '.portfolio__next',
-				prevEl: '.portfolio__prev',
+				nextEl: `.portfolio__next--${i + 1}`,
+				prevEl: `.portfolio__prev--${i + 1}`,
 			},
+			// breakpoints: {
+			// 	320: {
+			// 		spaceBetween: 40,
+			// 	},
+			// 	800: {
+			// 		spaceBetween: 40,
+			// 	},
+			// },
 			on: {
 				slideChange: function () {
-					fractionCurrent.html(this.realIndex + 1)
+					fractionCurrent.html(this.realIndex + 1);
 				},
 				init: function () {
-					console.log(this.slides)
-					this.slideTo(0)
+					// console.log(this.slides)
+					// this.slideTo(0)
 					if (this.slides.length) {
-						fractionAll.html(this.slides.length / 2)
+						fractionAll.html(this.slides.length)
+						fractionCurrent.html(this.realIndex + 1)
+					}
+				},
+				update: function () {
+					if (this.slides.length) {
+						fractionAll.html(this.slides.length)
 						fractionCurrent.html(this.realIndex + 1)
 					}
 				},
 			}
-			// pagination: {
-			// 	el: '.swiper-pagination',
-			// 	type: 'fraction',
-			// 	clickable: true,
-			// },
-			// navigation: {
-			// 	nextEl: el.closest('.slider-1').querySelector('.slider-1__next'),
-			// 	prevEl: el.closest('.slider-1').querySelector('.slider-1__prev'),
-			// },
-			// breakpoints: {
-			// 	320: {
-			// 		slidesPerView: 1,
-			// 	},
-			// 	653: {
-			// 		slidesPerView: 2,
-			// 	},
-			// 	1130: {
-			// 		slidesPerView: 3,
-			// 	},
-			// 	1340: {
-			// 		slidesPerView: 4,
-			// 		spaceBetween: 30,
-			// 	}
-			// }
 		})
 		)
 	})
 
-	console.log(arraySliders)
+	console.log(arraySliders[1].slides.length)
 
 
 	// Fancy-box
 	$(".to-modal").on('click', function () {
 		$.fancybox.open({
 			src: '#modal-call',
-			touch: 'false',
 			smallBtn: false,
 			buttons: '',
 		});
@@ -309,7 +300,6 @@ $(document).ready(function () {
 	$(".to-privacy").on('click', function () {
 		$.fancybox.open({
 			src: '#modal-polit',
-			touch: 'false',
 			smallBtn: false,
 			buttons: '',
 		});
@@ -318,14 +308,14 @@ $(document).ready(function () {
 	$(".to-project").on('click', function () {
 		$.fancybox.open({
 			src: '#modal-project',
-			touch: 'false',
+			touch: false,
 			smallBtn: false,
 			buttons: '',
 		});
 	});
 
 	// Input-mask
-	// $('input[type="tel"]').inputmask({ "mask": "+7 (999)-999-99-99" });
+	$('input[type="tel"]').inputmask({ "mask": "+7 (999)-999-99-99" });
 
 	// Табы
 	$('ul.portfolio__tabs').on('click', 'li:not(.active)', function () {
@@ -337,6 +327,11 @@ $(document).ready(function () {
 			.removeClass('active')
 			.eq($(this).index())
 			.addClass('active')
+		// .closest('div.portfolio__left')
+		$('.arrows-tab').removeClass('active')
+		$('.arrows-tab').eq($(this).index()).addClass('active')
+		// console.log($('.arrows-tab'))
+		arraySliders[$(this).index()].update()
 	})
 
 	// Menu-burger

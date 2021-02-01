@@ -85,6 +85,33 @@
 		color: #000000;
 		background: #fcb813;
 		text-transform: uppercase;
+
+		transform: perspective(1px) translateZ(0);
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #fff;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+		}
+		&:hover {
+			color: #000000;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+
 		@media (max-width: 768px) {
 			@include adaptiv(font-size, 20, 18, 1200, 768);
 		}

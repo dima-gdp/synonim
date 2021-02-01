@@ -205,9 +205,17 @@
 		padding-right: 22px;
 		font-size: 20px;
 		line-height: 1.5;
-		color: #fcb813;
+		color: #a4a4a4;
 		background-color: transparent;
 		position: relative;
+
+		&:hover {
+			color: #fcb813;
+			span:before,
+			span:after {
+				background: #fcb813;
+			}
+		}
 
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			font-size: 17px;
@@ -232,7 +240,7 @@
 				left: 0;
 				width: 100%;
 				height: 2px;
-				background: #fcb813;
+				background: #a4a4a4;
 			}
 			&::before {
 				content: "";
@@ -241,7 +249,7 @@
 				left: 6px;
 				width: 2px;
 				height: 100%;
-				background: #fcb813;
+				background: #a4a4a4;
 			}
 		}
 	}

@@ -194,6 +194,31 @@
 		color: #ffffff;
 		background: #fcb813;
 		flex: 0 0 210px;
+		transform: perspective(1px) translateZ(0);
+		position: relative;
+		transition-property: color;
+		transition-duration: 0.3s;
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #000;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			transition-timing-function: ease-out;
+		}
+		&:hover {
+			color: #fff;
+			&::before {
+				transform: scaleX(1);
+			}
+		}
 		@media (max-width: 1200px) {
 			flex: 0 0 45%;
 			font-size: 18px;
