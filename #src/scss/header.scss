@@ -59,9 +59,14 @@
 		font-size: 20px;
 		line-height: 1.5;
 		color: #ffffff;
+		transition: color 0.3s;
 		@media (max-width: 768px) {
 			margin-right: 0;
 			@include adaptiv(font-size, 18, 14, 768, 320);
+		}
+
+		&:hover {
+			color: #fcb813;
 		}
 	}
 	// .header__text

@@ -114,6 +114,19 @@ body {
 		height: 19px;
 		transform: rotate(180deg);
 	}
+
+	&__next,
+	&__prev {
+		path {
+			transition: fill 0.3s;
+		}
+
+		&:hover {
+			path {
+				fill: #fcb813;
+			}
+		}
+	}
 }
 
 .to-privacy {
@@ -185,4 +198,18 @@ body {
 			transform: scaleX(1);
 		}
 	}
+}
+
+div.wpcf7-response-output,
+div.wpcf7-validation-errors,
+div.wpcf7 .ajax-loader {
+	display: none !important;
+}
+
+span.wpcf7-not-valid-tip {
+	display: none;
+}
+
+.alertify-notifier {
+	z-index: 99997;
 }

@@ -1,6 +1,34 @@
 $(document).ready(function () {
 	objectFitImages();
 
+	AOS.init({
+		once: true,
+	});
+
+	alertify.set('notifier', 'position', 'bottom-right');
+	alertify.set('notifier', 'delay', 10);
+
+	document.addEventListener('wpcf7mailsent', function (event) {
+		alertify.success(event.detail.apiResponse.message)
+	}, false);
+
+	document.addEventListener('wpcf7invalid', function (event) {
+		alertify.warning(event.detail.apiResponse.message);
+	}, false);
+
+	document.addEventListener('wpcf7mailfailed', function (event) {
+		alertify.error(event.detail.apiResponse.message);
+	}, false);
+
+
+
+	$(document).on('click', '.wpcf7-submit', function (e) {
+		if ($('.ajax-loader').hasClass('is-active')) {
+			e.preventDefault();
+			return false;
+		}
+	});
+
 	const imgTo = $('.third__image img')
 	const slidersTabs = document.querySelectorAll('.portfolio__slider');
 	const fractionAll = $('.fraction__all')

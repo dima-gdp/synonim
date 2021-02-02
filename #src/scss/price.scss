@@ -48,11 +48,12 @@
 }
 
 .card-price {
+	height: 100%;
 	min-height: 783px;
 	display: flex;
 	flex-direction: column;
 	@media (max-width: 992px) {
-		min-height: 650px;
+		min-height: 0;
 	}
 	// .card-price__top
 	&__top {
@@ -105,7 +106,7 @@
 	}
 	// .card-price__main
 	&__main {
-		padding: 38px 27px 10px 44px;
+		padding: 38px 27px 23px 44px;
 		display: flex;
 		justify-content: space-between;
 		flex: 1 1 auto;

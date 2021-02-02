@@ -16,6 +16,18 @@
 	&__container {
 		position: relative;
 	}
+
+	.wpcf7-form {
+		display: flex;
+		margin-bottom: 34px;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 34, 20, 1200, 320);
+		}
+		@media (max-width: 992px) {
+			flex-direction: column;
+		}
+	}
+
 	// .consultation__flex
 	&__flex {
 		display: flex;
@@ -240,17 +252,6 @@
 		}
 	}
 
-	// .bot-consultation__from-top
-	&__from-top {
-		display: flex;
-		margin-bottom: 34px;
-		@media (max-width: 1200px) {
-			@include adaptiv(margin-bottom, 34, 20, 1200, 320);
-		}
-		@media (max-width: 992px) {
-			flex-direction: column;
-		}
-	}
 	// .bot-consultation__span
 	.wpcf7-form-control-wrap {
 		height: 60px;
@@ -350,3 +351,5 @@
 		cursor: pointer;
 	}
 }
+
+// .bot-consultation__from-top

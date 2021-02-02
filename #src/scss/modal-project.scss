@@ -105,6 +105,7 @@
 	&__control {
 		margin-right: 30px;
 		justify-content: center;
+		position: relative;
 		@media (max-width: 992px) and (min-width: 650px) {
 			margin-right: 20px;
 		}
@@ -126,8 +127,8 @@
 	}
 	// .top-modal__next
 	&__next {
-		path {
-			fill: #fcb813;
+		svg path {
+			fill: #fff;
 		}
 	}
 	&__pagination {
@@ -267,8 +268,10 @@
 		}
 	}
 	// .bot-modal__form
-	&__form {
+	.wpcf7-form {
 		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
 		@media (max-width: 850px) {
 			max-width: 399px;
 			margin: 20px auto 0 auto;
@@ -393,6 +396,7 @@
 	}
 	.wpcf7-form-control-wrap {
 		margin-bottom: 15px;
+		display: block;
 		input {
 			display: flex;
 			align-items: center;
@@ -417,8 +421,6 @@
 	}
 	// .form-modal__form
 	&__form {
-		display: flex;
-		flex-direction: column;
 	}
 	// .form-modal__btn
 	&__btn {
