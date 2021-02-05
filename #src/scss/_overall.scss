@@ -146,7 +146,7 @@ body {
 	top: 0;
 	height: 20000px;
 	width: 1px;
-	border: 1px solid #e5e5e5;
+	background-color: #e5e5e5;
 	&--1 {
 		left: calc(50% + 145px);
 	}
@@ -169,6 +169,19 @@ body {
 	}
 	100% {
 		transform: translateX(-100%);
+	}
+}
+
+@keyframes round {
+	0% {
+		width: 100%;
+		height: 100%;
+		opacity: 0.4;
+	}
+	100% {
+		width: 125%;
+		height: 125%;
+		opacity: 1;
 	}
 }
 
@@ -212,4 +225,24 @@ span.wpcf7-not-valid-tip {
 
 .alertify-notifier {
 	z-index: 99997;
+}
+
+.wpcf7-not-valid {
+	border-color: red !important;
+}
+
+.wpcf7-submit {
+	cursor: pointer;
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--previous {
+	transform: translateX(-100%);
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--next {
+	transform: translateX(100%);
+}
+
+.fancybox-fx-slide-in-out.fancybox-slide--current {
+	transform: translateX(0);
 }

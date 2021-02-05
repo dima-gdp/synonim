@@ -9,10 +9,10 @@
 		height: 1600px;
 		background: url("../img/hero-bg.jpg") center / cover no-repeat;
 		@media (max-width: 1600px) {
-			width: 25%;
+			width: 22%;
 		}
 		@media (max-width: 1370px) {
-			width: 20%;
+			width: 16%;
 		}
 		@media (max-width: 1200px) {
 			display: none;
@@ -67,14 +67,27 @@
 		@media (max-width: 1200px) {
 			@include adaptiv(margin-bottom, 60, 20, 1200, 320);
 		}
+		.swiper-wrapper {
+			align-items: stretch;
+		}
 
 		.swiper-slide {
 			cursor: pointer;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
 			@media (min-width: 992px) {
 				&:hover {
 					.fourth-item__hover {
 						transform: translateY(-100%);
 						top: -46px;
+					}
+					.fourth-item__image {
+						transform: scale(1.1);
+					}
+					.fourth-item__image::before {
+						opacity: 1;
 					}
 				}
 			}
@@ -111,6 +124,9 @@
 	&__next {
 		path {
 			fill: #fff;
+			@media (max-width: 1200px) {
+				fill: #000;
+			}
 		}
 	}
 	&__single {
@@ -119,9 +135,11 @@
 }
 .fourth-item {
 	padding: 479px 0px 40px 43px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	position: relative;
+	height: 100%;
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
 
 	@media (max-width: 1417px) and (min-width: 1201px) {
 		padding: 320px 0px 30px 30px;
@@ -139,9 +157,59 @@
 		@include adaptiv(padding-top, 400, 200, 485, 320);
 		@include adaptiv(padding-left, 43, 20, 485, 320);
 	}
-
+	// .fourth-item__descr
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transition: 0.3s;
+		overflow: hidden;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			z-index: 1;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			font-family: "object-fit: cover; object-position: center;";
+		}
+	}
 	// .fourth-item__descr
 	&__descr {
+	}
+	// .fourth-item__descr
+	&__price {
+		position: absolute;
+		top: 30px;
+		right: 0;
+		padding: 9px 15px;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 1;
+		color: #000000;
+		background: #fcb813;
+		@media (max-width: 684px) {
+			font-size: 13px;
+			top: 20px;
+		}
+		@media (max-width: 485px) {
+			font-size: 16px;
+			top: 30px;
+		}
 	}
 	// .fourth-item__hover
 	&__hover {
@@ -184,6 +252,7 @@
 .descr-fourth {
 	background-color: #fff;
 	position: relative;
+	flex: 1 1 auto;
 	&__container {
 		background-color: #fff;
 		padding: 8px 10px 8px 49px;

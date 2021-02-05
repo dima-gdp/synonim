@@ -77,6 +77,10 @@
 		}
 	}
 
+	&__hidden {
+		display: none !important;
+	}
+
 	// .modal-comment__btn
 	&__btn {
 		font-weight: 700;

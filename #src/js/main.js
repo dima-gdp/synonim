@@ -73,16 +73,21 @@ $(document).ready(function () {
 		slidesPerView: 1,
 		loopedSlides: 1,
 		loop: false,
+		autoplay: {
+			delay: 3500,
+		},
 		thumbs: {
 			swiper: slider_pag,
 		}
 	});
 
 
+
 	const slider2 = new Swiper('.fourth__slider', {
 		slidesPerView: 4,
 		loop: false,
 		spaceBetween: 40,
+		autoHeight: true,
 		navigation: {
 			nextEl: '.fourth__next',
 			prevEl: '.fourth__prev',
@@ -266,6 +271,8 @@ $(document).ready(function () {
 
 	setDoingHeight()
 
+
+
 	let arraySliders = [];
 
 	slidersTabs.forEach(function (el, i) {
@@ -379,6 +386,18 @@ $(document).ready(function () {
 			$('.doing__item').removeClass('doing__item--active')
 		}
 	})
+
+	let portfolioHeight = $('.portfolio__slider').innerHeight();
+	$('.portfolio__slider').css('min-height', `${portfolioHeight}px`);
+
+	// console.log(portfolioHeight)
+
+	// $('.portfolio-slide').each(function (i, el) {
+	// 	$(el).css('min-height', `${portfolioHeight}px`);
+	// })
+
+
+
 
 
 

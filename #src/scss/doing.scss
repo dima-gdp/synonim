@@ -68,8 +68,7 @@
 	&__item {
 		min-height: 460px;
 		position: relative;
-		transition: 0.8s;
-		transform-style: preserve-3d;
+
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			min-height: 400px;
 		}
@@ -78,7 +77,15 @@
 		}
 
 		&--active {
-			transform: rotateY(-180deg);
+			.doing__front {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.doing__back {
+				transform: rotateY(0);
+				opacity: 1;
+			}
 		}
 	}
 	// .doing__front
@@ -143,9 +150,11 @@
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	z-index: 2;
+	z-index: 30;
 	transform: rotateY(0deg);
 	background: #222226;
+	transition: 0.8s;
+	transform-style: preserve-3d;
 	backface-visibility: hidden;
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px;
@@ -153,7 +162,7 @@
 	@media (max-width: 935px) and (min-width: 486px) {
 		@include adaptiv(padding-left, 50, 15, 935, 486);
 		@include adaptiv(padding-right, 50, 15, 935, 486);
-		padding-bottom: 20px;
+		padding-bottom: 30px;
 		padding-top: 30px;
 	}
 	@media (max-width: 485px) {
@@ -190,6 +199,7 @@
 		line-height: 1.28;
 		text-align: center;
 		color: #ffffff;
+		flex: 1 1 auto;
 		@media (max-width: 1400px) and (min-width: 1150px) {
 			@include adaptiv(font-size, 36, 27, 1400, 1150);
 		}
@@ -264,9 +274,13 @@
 	left: 0;
 	width: 100%;
 	min-height: 100%;
-	transform: rotateY(-180deg);
+	transform: rotateY(180deg);
 	background-color: #fff;
+	transition: 0.8s;
+	transform-style: preserve-3d;
 	pointer-events: none;
+	z-index: 1;
+	opacity: 0;
 	@media (max-width: 1400px) and (min-width: 1150px) {
 		padding: 40px 40px 20px 40px;
 	}
