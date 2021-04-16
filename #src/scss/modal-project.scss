@@ -316,7 +316,7 @@
 		.swiper-slide {
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: cover;
+			background-size: contain;
 		}
 	}
 	// .bot-modal__form
@@ -471,9 +471,15 @@
 				}
 			}
 		}
+		&.title {
+			display: none;
+		}
 	}
 	// .form-modal__form
 	&__form {
+	}
+	&__hidden {
+		display: none !important;
 	}
 	// .form-modal__btn
 	&__btn {

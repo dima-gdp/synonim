@@ -154,8 +154,9 @@
 		padding-left: 10px;
 	}
 	@media (max-width: 485px) {
-		@include adaptiv(padding-top, 400, 200, 485, 320);
-		@include adaptiv(padding-left, 43, 20, 485, 320);
+		// @include adaptiv(padding-top, 400, 200, 485, 320);
+		// @include adaptiv(padding-left, 43, 20, 485, 320);
+		padding: 0;
 	}
 	// .fourth-item__descr
 	&__image {
@@ -186,6 +187,11 @@
 			object-fit: cover;
 			object-position: center;
 			font-family: "object-fit: cover; object-position: center;";
+		}
+
+		@media (max-width: 485px) {
+			position: relative;
+			padding-bottom: 95%;
 		}
 	}
 	// .fourth-item__descr
@@ -288,7 +294,8 @@
 			margin-bottom: 15px;
 		}
 		@media (max-width: 475px) {
-			@include adaptiv(font-size, 30, 19, 475, 320);
+			margin-bottom: 10px;
+			@include adaptiv(font-size, 30, 18, 475, 320);
 		}
 	}
 	// .descr-fourth__flex
